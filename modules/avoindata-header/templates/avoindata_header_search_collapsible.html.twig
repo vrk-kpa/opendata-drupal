@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Print collapsible search
+ * 
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('avoindata_header/avoindata_header') }}
+<div id="header-search-container" hidden>
+  <div class="header-search-input-container is-hidden">
+    {% set ckanLang = language %}
+    {% if ckanLang == 'en' %}
+      {% set ckanLang = 'en_GB' %}
+    {% endif %}
+    <form action="/data/{{ ckanLang }}/dataset" id="header-search-form" method="get">
+      <input name="q" class="form-control" id="avoindata-nav-search-input" placeholder="{% trans %}Search datasets...{% endtrans %}" value="">
+    </form>
+  </div>
+  <div class="header-search-submit-container">
+    <a id="avoindata-nav-search-submit" href="#">
+      <span class="fas fa-search header-icon"></span>
+    </a>
+  </div>
+</div>

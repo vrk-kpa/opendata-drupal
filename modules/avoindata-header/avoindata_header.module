@@ -1,0 +1,72 @@
+<?php
+
+/**
+ * @file
+ * Adds avoindata header module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Security\TrustedCallbackInterface;
+
+/**
+ * Implements hook_help().
+ */
+function avoindata_header_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.avoindata_header':
+      return t('
+        Creates header that can be exported to non-Drupal pages.
+      ');
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function avoindata_header_theme($existing, $type, $theme, $path) {
+  return [
+    'avoindata_header_search_collapsible' => [
+      'template' => 'avoindata_header_search_collapsible',
+      'variables' => [
+        'language' => NULL,
+      ],
+    ],
+    'avoindata_header' => [
+      'template' => 'avoindata_header',
+      'variables' => [
+        'language' => NULL,
+      ],
+    ],
+    'avoindata_login' => [
+      'template' => 'avoindata_login',
+      'variables' => [
+        'avoindata_drupal_username' => NULL,
+        'language' => NULL,
+      ],
+    ],
+  ];
+}
+
+
+
+class AvoindataHeaderHandler implements TrustedCallbackInterface {
+
+  /**
+   * Gets username from Drupal lazily around the cache.
+   */
+  function avoindata_drupal_username() {
+    $drupal_username_markup = \Drupal::currentUser()->getAccountName();
+
+    return [
+      '#markup' => $drupal_username_markup,
+      '#cache' => ['max-age' => 0],
+    ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function trustedCallbacks() {
+    return ['avoindata_drupal_username'];
+  }
+}

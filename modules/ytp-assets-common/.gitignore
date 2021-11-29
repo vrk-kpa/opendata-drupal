@@ -1,0 +1,9 @@
+node_modules
+.project
+.pydevproject
+*.css.map
+resources
+Thumbs.db
+src/static_pages/css/style.css
+src/vendor
+/.npmrc

@@ -1,0 +1,41 @@
+// Additional info resource list
+.resource-list {
+  margin: 0;
+
+  .resource-item {
+    border-bottom: 1px solid @color--extra-light-grey;
+    border-radius: 0;
+    padding: @padding__resource-list-item;
+    display: flex;
+
+    &:hover {
+      background: transparent;
+    }
+
+    .resource-item__icon {
+      position: static;
+      margin-right: @margin-x__common;
+      align-self: center;
+    }
+
+    .resource-item__info__description {
+      margin-bottom: 0;
+    }
+
+    .resource-item__actions {
+      text-transform: uppercase;
+      line-height: 35px;
+      font-weight: 600;
+      margin-left: auto;
+    }
+
+    a {
+      color: @opendata-brand-primary;
+      transition: color @transition-duration--short @transition-timing-function--default;
+
+      &:hover {
+        color: @opendata-brand-primary--highlight;
+      }
+    }
+  }
+}
