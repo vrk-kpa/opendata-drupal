@@ -1,0 +1,12 @@
+---
+branches:
+  - master
+repositoryUrl: git+https://github.com/vrk-kpa/opendata-drupal.git
+tagFormat: v${version}
+plugins:
+  - "@semantic-release/commit-analyzer"
+  - "@semantic-release/release-notes-generator"
+  - "@semantic-release/github"
+dryRun: true
+ci: true
+debug: false
