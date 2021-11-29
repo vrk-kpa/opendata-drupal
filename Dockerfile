@@ -51,6 +51,8 @@ RUN composer install --no-cache
 #
 FROM drupal_build as drupal_development
 
+ENV DEV_MODE=true
+
 ENTRYPOINT ["/opt/drupal/entrypoint.sh"]
 
 #
