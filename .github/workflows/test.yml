@@ -1,4 +1,4 @@
-name: Test release of new version
+name: Test
 
 on:
   pull_request:
@@ -48,15 +48,16 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
 
       - name: semantic release
         uses: cycjimmy/semantic-release-action@v2
         with:
-          semantic_version: 16
+          semantic_version: 18
           branch: master
           dry_run: true
+          extra_plugins: |
+            @semantic-release/changelog@6.0.1
+            @semantic-release/git@10.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

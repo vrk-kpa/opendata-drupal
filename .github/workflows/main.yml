@@ -1,4 +1,4 @@
-name: Release new version
+name: Build
 
 on:
   push:
@@ -10,6 +10,9 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -31,8 +34,8 @@ jobs:
       - name: configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          role-session-name: github-actions
           aws-region: eu-west-1
 
       - name: login to AWS ECR
@@ -58,18 +61,54 @@ jobs:
     timeout-minutes: 5
     needs:
       - build
+    outputs:
+      new_release_published: ${{ steps.semantic.outputs.new_release_published }}
+      new_release_version: ${{ steps.semantic.outputs.new_release_version }}
     steps:
       - name: checkout
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
 
       - name: semantic release
+        id: semantic
         uses: cycjimmy/semantic-release-action@v2
         with:
-          semantic_version: 16
+          semantic_version: 18
           branch: master
           dry_run: false
+          extra_plugins: |
+            @semantic-release/changelog@6.0.1
+            @semantic-release/git@10.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  tag:
+    name: tag
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs:
+      - release
+    if: always() && needs.release.outputs.new_release_published == 'true'
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          role-session-name: github-actions
+          aws-region: eu-west-1
+
+      # NOTE: https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-retag.html
+      - name: create release tag
+        run: |
+          MANIFEST=$(aws ecr batch-get-image --repository-name $ECR_REPO --image-ids imageTag=$GIT_SHA --query 'images[].imageManifest' --output text)
+          aws ecr put-image --repository-name $ECR_REPO --image-tag $GIT_TAG --image-manifest "$MANIFEST"
+        env:
+          ECR_REPO: opendata/drupal
+          GIT_SHA: ${{ github.sha }}
+          GIT_TAG: v${{ needs.release.outputs.new_release_version }}

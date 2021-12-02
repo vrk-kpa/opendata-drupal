@@ -7,6 +7,15 @@ plugins:
   - "@semantic-release/commit-analyzer"
   - "@semantic-release/release-notes-generator"
   - "@semantic-release/github"
-dryRun: true
+  - "@semantic-release/changelog"
+  - "@semantic-release/git"
+prepare:
+  - path: "@semantic-release/changelog"
+    changelogFile: "docs/CHANGELOG.md"
+  - path: "@semantic-release/git"
+    assets:
+      - "docs/CHANGELOG.md"
+    message: "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+dryRun: false
 ci: true
 debug: false
