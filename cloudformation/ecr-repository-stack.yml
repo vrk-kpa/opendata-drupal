@@ -1,0 +1,19 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Creates ECR repository.
+
+Parameters:
+  RepositoryName:
+    Description: Name for the ECR repository.
+    Type: String
+
+Resources:
+  Repository: 
+    Type: AWS::ECR::Repository
+    Properties: 
+      EncryptionConfiguration:
+        EncryptionType: AES256
+      ImageScanningConfiguration:
+        ScanOnPush: true
+      ImageTagMutability: MUTABLE
+      RepositoryName: !Ref RepositoryName
