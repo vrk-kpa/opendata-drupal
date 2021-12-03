@@ -20,6 +20,7 @@ fi
 
 # apply jinja2 templates
 jinja2 /opt/templates/settings.php.j2 -o ${SITE_DIR}/default/settings.php
+jinja2 /opt/templates/services.yml.j2 -o ${SITE_DIR}/default/services.yml
 
 # run database upgrades & rebuild cache
 drush updatedb -y --no-cache-clear

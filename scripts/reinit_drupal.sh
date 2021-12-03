@@ -5,6 +5,7 @@ echo "reinit_drupal() ..."
 
 # apply jinja2 templates
 jinja2 /opt/templates/settings.php.j2 -o ${SITE_DIR}/default/settings.php
+jinja2 /opt/templates/services.yml.j2 -o ${SITE_DIR}/default/services.yml
 
 # rebuild cache
 drush cache:rebuild

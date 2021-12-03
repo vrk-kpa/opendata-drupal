@@ -1,5 +1,62 @@
 #
-# Modules build
+# Drupal build
+#
+FROM drupal:9-fpm-buster AS drupal_build
+
+# install required packages
+RUN apt-get update -yq && \
+    apt-get install -yq unzip \
+                    git \
+                    postgresql-client \
+                    rsync \
+                    python3 \
+                    python3-pip && \
+    pip3 install jinja2-cli
+
+# setup env vars
+ENV WEB_DIR=/opt/drupal/web
+ENV SITE_DIR=${WEB_DIR}/sites
+ENV MOD_DIR=${WEB_DIR}/modules
+ENV THEME_DIR=${WEB_DIR}/themes
+ENV CORE_DIR=${WEB_DIR}/core
+ENV BASE_DIR=/opt/drupal_base
+ENV WWW_DIR=/var/www
+
+# make sure config sync/files directories exist
+RUN mkdir -p ${SITE_DIR}/default/sync && \
+    chown -R www-data:www-data ${SITE_DIR}/default/sync && \
+    mkdir -p ${SITE_DIR}/default/files && \
+    chown -R www-data:www-data ${SITE_DIR}/default/files
+
+# copy translations
+COPY i18n /opt/i18n
+
+# copy scripts
+COPY scripts/ /opt/drupal/
+RUN chmod +x /opt/drupal/*.sh
+
+# copy site config
+COPY site_config /opt/drupal/site_config
+
+# copy templates
+COPY templates /opt/templates
+
+# install composer project
+COPY composer.json /opt/drupal/composer.json
+COPY composer.lock /opt/drupal/composer.lock
+RUN composer install --no-cache
+
+#
+# Development image (For local development)
+#
+FROM drupal_build as drupal_development
+
+ENV DEV_MODE=true
+
+ENTRYPOINT ["/opt/drupal/entrypoint.sh"]
+
+#
+# Modules build (for production)
 #
 FROM ubuntu:focal AS modules_build
 
@@ -42,63 +99,15 @@ RUN chmod +x ./build_frontend.sh
 RUN --mount=type=secret,id=npmrc ./build_frontend.sh
 
 #
-# Drupal build
+# Production image
 #
-FROM drupal:9-fpm-buster
-
-# install required packages
-RUN apt-get update -yq && \
-    apt-get install -yq unzip \
-                    git \
-                    postgresql-client \
-                    rsync \
-                    python3 \
-                    python3-pip && \
-    pip3 install jinja2-cli
-
-# setup env vars
-ENV WEB_DIR=/opt/drupal/web
-ENV SITE_DIR=${WEB_DIR}/sites
-ENV MOD_DIR=${WEB_DIR}/modules
-ENV THEME_DIR=${WEB_DIR}/themes
-ENV CORE_DIR=${WEB_DIR}/core
-ENV BASE_DIR=/opt/drupal_base
-
-# make sure config sync directory exists
-RUN mkdir -p ${SITE_DIR}/default/sync && \
-    chown -R www-data:www-data ${SITE_DIR}/default/sync
-
-# make sure public files directory exists
-RUN mkdir -p ${SITE_DIR}/default/files && \
-    chown -R www-data:www-data ${SITE_DIR}/default/files
-
-# copy scripts
-COPY scripts/ /opt/drupal/
-RUN chmod +x /opt/drupal/*.sh
-
-# copy site config
-COPY site_config /opt/drupal/site_config
-
-# copy translations
-COPY i18n /opt/i18n
-
-# copy services.yml
-COPY services.yml ${SITE_DIR}/default/services.yml
-
-# copy templates
-COPY templates /opt/templates
-
-# install composer project
-COPY composer.json /opt/drupal/composer.json
-COPY composer.lock /opt/drupal/composer.lock
-RUN composer install --no-cache
+FROM drupal_build
 
 # copy modules and themes
 COPY --from=modules_build /opt/drupal_modules ${MOD_DIR}/
 RUN mv ${MOD_DIR}/avoindata-theme ${THEME_DIR}/avoindata/
 
 # install frontend
-ENV WWW_DIR=/var/www
 RUN mkdir -p ${WWW_DIR} && mv ${MOD_DIR}/ytp-assets-common/resources ${WWW_DIR}/
 
 # install fonts
@@ -110,10 +119,8 @@ RUN mkdir -p ${BASE_DIR} && \
     mv ${SITE_DIR} ${BASE_DIR}/sites && \
     mv ${THEME_DIR} ${BASE_DIR}/themes && \
     mv ${CORE_DIR} ${BASE_DIR}/core && \
-    mv ${WWW_DIR}/resources ${BASE_DIR}/resources
-
-# setup filesystems
-RUN mkdir -p ${SITE_DIR} && \
+    mv ${WWW_DIR}/resources ${BASE_DIR}/resources && \
+    mkdir -p ${SITE_DIR} && \
     mkdir -p ${THEME_DIR} && \
     mkdir -p ${CORE_DIR} && \
     mkdir -p ${WWW_DIR}/resources
