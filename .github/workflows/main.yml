@@ -10,6 +10,9 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    concurrency:
+      group: ${{ github.ref }}
+      cancel-in-progress: true
     permissions:
       id-token: write
       contents: read
@@ -59,6 +62,8 @@ jobs:
     name: release
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    concurrency:
+      group: ${{ github.ref }}
     needs:
       - build
     outputs:
@@ -86,6 +91,8 @@ jobs:
     name: tag
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    concurrency:
+      group: ${{ github.ref }}
     needs:
       - release
     if: always() && needs.release.outputs.new_release_published == 'true'
