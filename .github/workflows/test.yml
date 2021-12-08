@@ -10,6 +10,9 @@ jobs:
     name: test-build
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    concurrency:
+      group: ${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -45,6 +48,8 @@ jobs:
     name: test-release
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    concurrency:
+      group: ${{ github.ref }}
     steps:
       - name: checkout
         uses: actions/checkout@v2
