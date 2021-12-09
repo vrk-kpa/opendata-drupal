@@ -156,4 +156,4 @@ chown -R www-data:www-data ${SITE_DIR}/default/sync
 chown -R www-data:www-data ${SITE_DIR}/default/files
 
 # set init flag to done
-echo "$DRUPAL_IMAGE_VERSION" > ${SITE_DIR}/.init-done
+echo "$DRUPAL_IMAGE_TAG" > ${SITE_DIR}/.init-done
