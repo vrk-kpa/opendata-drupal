@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.1.0...v1.1.1) (2021-12-09)
+
+
+### Bug Fixes
+
+* rename DRUPAL_IMAGE_VERSION to DRUPAL_IMAGE_TAG ([e03f889](https://github.com/vrk-kpa/opendata-drupal/commit/e03f889b601485a3c0e0dcca1df87b517c045fdf))
+
 # [1.1.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.0.0...v1.1.0) (2021-12-03)
 
 
