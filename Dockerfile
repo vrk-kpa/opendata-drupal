@@ -1,7 +1,7 @@
 #
 # Drupal build
 #
-FROM drupal:9-fpm-buster AS drupal_build
+FROM drupal:9.2-fpm-buster AS drupal_build
 
 # install required packages
 RUN apt-get update -yq && \
@@ -10,7 +10,8 @@ RUN apt-get update -yq && \
                     postgresql-client \
                     rsync \
                     python3 \
-                    python3-pip && \
+                    python3-pip \
+                    procps && \
     pip3 install jinja2-cli
 
 # setup env vars
