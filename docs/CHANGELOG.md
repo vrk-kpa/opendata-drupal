@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.1.1...v1.1.2) (2021-12-10)
+
+
+### Bug Fixes
+
+* **drupal:** set version number to 9.2 for drupal base image ([d67b361](https://github.com/vrk-kpa/opendata-drupal/commit/d67b361fdac4990795702a226a5780a361828f25))
+
 ## [1.1.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.1.0...v1.1.1) (2021-12-09)
 
 
