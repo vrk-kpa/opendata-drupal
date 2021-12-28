@@ -15,12 +15,11 @@ elif [[ ! -z "$SECRET_NPMRC" ]]; then
   echo "$SECRET_NPMRC" > .npmrc
 else
   echo "secret .npmrc not available, using default package.json..."
-  rm -f package.json
-  mv package.default.json package.json
+  mv -f package.default.json package.json
 fi
 
 # build & cleanup
 npm install --unsafe-perm=true --allow-root && \
-  gulp && \
+  npm run gulp && \
   rm -f .npmrc && \
   rm -rf node_modules

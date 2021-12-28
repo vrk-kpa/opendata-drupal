@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-echo "init_drupal() ..."
+echo "init_drupal ..."
 
 # init filesystems
-. init_filesystems.sh
+. ${SCRIPT_DIR}/init_filesystems.sh
 
 # init database if not exists (return value is 0 and result is 0 rows)
 DB_CHECK_SQL="SELECT 1 FROM pg_tables WHERE schemaname='public' AND tablename='node'"
@@ -19,8 +19,8 @@ if [ $? -eq 0 ] && [[ -z "${DB_CHECK_RES// }" ]]; then
 fi
 
 # apply jinja2 templates
-jinja2 /opt/templates/settings.php.j2 -o ${SITE_DIR}/default/settings.php
-jinja2 /opt/templates/services.yml.j2 -o ${SITE_DIR}/default/services.yml
+jinja2 ${TEMPLATE_DIR}/settings.php.j2 -o ${SITE_DIR}/default/settings.php
+jinja2 ${TEMPLATE_DIR}/services.yml.j2 -o ${SITE_DIR}/default/services.yml
 
 # run database upgrades & rebuild cache
 drush updatedb -y --no-cache-clear
@@ -123,33 +123,33 @@ drush config:import -y --partial --source ${MOD_DIR}/avoindata-user/config/insta
 drush config:import -y --partial --source ${MOD_DIR}/avoindata-ckeditor-plugins/config/install || true
 
 # apply jinja2 templates
-jinja2 --format=yaml /opt/templates/site_config/disqus.settings.yml.j2    -o /opt/drupal/site_config/disqus.settings.yml
-jinja2 --format=yaml /opt/templates/site_config/matomo.settings.yml.j2    -o /opt/drupal/site_config/matomo.settings.yml
-jinja2 --format=yaml /opt/templates/site_config/recaptcha.settings.yml.j2 -o /opt/drupal/site_config/recaptcha.settings.yml
-jinja2 --format=yaml /opt/templates/site_config/smtp.settings.yml.j2      -o /opt/drupal/site_config/smtp.settings.yml
-jinja2 --format=yaml /opt/templates/site_config/update.settings.yml.j2    -o /opt/drupal/site_config/update.settings.yml
+jinja2 --format=yaml ${TEMPLATE_DIR}/site_config/disqus.settings.yml.j2    -o ${APP_DIR}/site_config/disqus.settings.yml
+jinja2 --format=yaml ${TEMPLATE_DIR}/site_config/matomo.settings.yml.j2    -o ${APP_DIR}/site_config/matomo.settings.yml
+jinja2 --format=yaml ${TEMPLATE_DIR}/site_config/recaptcha.settings.yml.j2 -o ${APP_DIR}/site_config/recaptcha.settings.yml
+jinja2 --format=yaml ${TEMPLATE_DIR}/site_config/smtp.settings.yml.j2      -o ${APP_DIR}/site_config/smtp.settings.yml
+jinja2 --format=yaml ${TEMPLATE_DIR}/site_config/update.settings.yml.j2    -o ${APP_DIR}/site_config/update.settings.yml
 
 # disable captcha conditionally
 if [ "${CAPTCHA_ENABLED}" != "true" ]; then
-  rm -f /opt/drupal/site_config/captcha.settings.yml
-  rm -f /opt/drupal/site_config/captcha.captcha_point.user_register_form.yml
-  rm -f /opt/drupal/site_config/captcha.captcha_point.contact_message_event_form.yml
-  rm -f /opt/drupal/site_config/captcha.captcha_point.contact_message_feedback_form.yml
+  rm -f ${APP_DIR}/site_config/captcha.settings.yml
+  rm -f ${APP_DIR}/site_config/captcha.captcha_point.user_register_form.yml
+  rm -f ${APP_DIR}/site_config/captcha.captcha_point.contact_message_event_form.yml
+  rm -f ${APP_DIR}/site_config/captcha.captcha_point.contact_message_feedback_form.yml
 fi
 
 # import settings
-drush config:import -y --partial --source /opt/drupal/site_config
+drush config:import -y --partial --source ${APP_DIR}/site_config
 
 # rebuild cache
 drush cache:rebuild
 
 # update translations
-drush language:import:translations /opt/i18n/fi/drupal8.po     --langcode "fi"
-drush language:import:translations /opt/i18n/sv/drupal8.po     --langcode "sv"
-drush language:import:translations /opt/i18n/en_GB/drupal8.po  --langcode "en"
+drush language:import:translations ${I18N_DIR}/fi/drupal8.po     --langcode "fi"
+drush language:import:translations ${I18N_DIR}/sv/drupal8.po     --langcode "sv"
+drush language:import:translations ${I18N_DIR}/en_GB/drupal8.po  --langcode "en"
 
 # init users and roles
-python3 init_users.py
+python3 ${SCRIPT_DIR}/init_users.py
 
 # make sure file permissions are correct
 chown -R www-data:www-data ${SITE_DIR}/default/sync
