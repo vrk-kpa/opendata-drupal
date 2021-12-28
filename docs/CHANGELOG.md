@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.1.2...v1.2.0) (2021-12-28)
+
+
+### Bug Fixes
+
+* **AV-1563:** revert ckan-2.9 related changes, keep refactor ([26d3aa8](https://github.com/vrk-kpa/opendata-drupal/commit/26d3aa8b1450bc7516a07ae4bd2c10a442260ba7))
+
+
+### Features
+
+* **AV-1563:** reflect changes done in ckan 2.8 -> 2.9 migration, refactor ([8cb7902](https://github.com/vrk-kpa/opendata-drupal/commit/8cb7902cbde734581434f0348028da6edd17647a))
+
 ## [1.1.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.1.1...v1.1.2) (2021-12-10)
 
 
