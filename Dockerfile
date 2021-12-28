@@ -28,6 +28,7 @@ ENV MOD_DIR=${WEB_DIR}/modules
 ENV THEME_DIR=${WEB_DIR}/themes
 ENV CORE_DIR=${WEB_DIR}/core
 ENV BASE_DIR=/opt/base
+ENV WWW_DIR=/var/www
 
 # copy app files
 COPY drupal/i18n ${I18N_DIR}
@@ -94,16 +95,12 @@ COPY modules/avoindata-theme                ${MOD_DIR}/avoindata-theme/
 
 # copy frontend
 COPY modules/ytp-assets-common              ${MOD_DIR}/ytp-assets-common/
-COPY drupal/gulpfile.js                     ${APP_DIR}/gulpfile.js
-COPY drupal/build_frontend.sh               ${APP_DIR}/build_frontend.sh
-COPY drupal/package.default.json            ${APP_DIR}/package.default.json
+COPY drupal/build_frontend.sh               ${MOD_DIR}/ytp-assets-common/build_frontend.sh
+COPY drupal/package.default.json            ${MOD_DIR}/ytp-assets-common/package.default.json
 
 # build frontend
-WORKDIR ${APP_DIR}
-RUN cp -f ${MOD_DIR}/ytp-assets-common/package.json ${APP_DIR} && \
-    cp -f ${MOD_DIR}/ytp-assets-common/.stylelintrc ${APP_DIR} && \
-    cp -f ${MOD_DIR}/ytp-assets-common/.stylelintignore ${APP_DIR} && \
-    chmod +x ./build_frontend.sh
+WORKDIR ${MOD_DIR}/ytp-assets-common/
+RUN chmod +x ./build_frontend.sh
 RUN --mount=type=secret,id=npmrc ./build_frontend.sh
 
 #
@@ -115,13 +112,20 @@ FROM drupal_build
 COPY --from=modules_build ${MOD_DIR} ${MOD_DIR}
 RUN mv ${MOD_DIR}/avoindata-theme ${THEME_DIR}/avoindata/
 
+# install frontend
+RUN mkdir -p ${WWW_DIR} && mv ${MOD_DIR}/ytp-assets-common/resources        ${WWW_DIR}/ && \
+    cp -rf ${WWW_DIR}/resources/vendor/@fortawesome/fontawesome/webfonts/.  ${THEME_DIR}/avoindata/fonts && \
+    cp -rf ${WWW_DIR}/resources/vendor/bootstrap/dist/fonts/.               ${THEME_DIR}/avoindata/fonts
+
 # setup base directory that is used for initializing shared file systems
 RUN mkdir -p ${BASE_DIR} && \
     mv ${SITE_DIR} ${BASE_DIR}/sites && \
     mv ${THEME_DIR} ${BASE_DIR}/themes && \
     mv ${CORE_DIR} ${BASE_DIR}/core && \
+    mv ${WWW_DIR}/resources ${BASE_DIR}/resources && \
     mkdir -p ${SITE_DIR} && \
     mkdir -p ${THEME_DIR} && \
-    mkdir -p ${CORE_DIR}
+    mkdir -p ${CORE_DIR} && \
+    mkdir -p ${WWW_DIR}/resources
 
 ENTRYPOINT ["/opt/drupal/scripts/entrypoint.sh"]
