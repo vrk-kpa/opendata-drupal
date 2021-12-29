@@ -24,7 +24,7 @@ var paths = {
     less: "src/less",
     ckan: "src/less/ckan",
     drupal: "src/less/drupal/style.less",
-    drupal_avoindata_header: "../avoindata-header/resources/avoindata_header.js",
+    drupal_avoindata_header: "../avoindata-drupal-header/resources/avoindata_header.js",
     drupal_ckeditor_plugins: "src/less/drupal/custom-elements.less",
     templates: "src/templates/**/*",
     static_pages: "src/static_pages",
@@ -111,7 +111,7 @@ gulp.task("drupal", (done) => {
     cleancss({ keepBreaks: false }),
     concat("style.css"),
     sourcemaps.write("./maps"),
-    gulp.dest("../avoindata-theme/css"),
+    gulp.dest("../avoindata-drupal-theme/css"),
   ], done)
 });
 
@@ -127,7 +127,7 @@ gulp.task("drupal_copy_custom_element_styles_to_plugin", (done) => {
     cleancss({ keepBreaks: false }),
     concat("style.css"),
     sourcemaps.write("./maps"),
-    gulp.dest("../avoindata-ckeditor-plugins/css"),
+    gulp.dest("../avoindata-drupal-ckeditor-plugins/css"),
   ], done)
 });
 
@@ -352,7 +352,7 @@ gulp.task("watch_styles", () => {
 
 gulp.task("watch_drupal_styles", () => {
   var watcher = gulp.watch(
-    ["./src/less/**/*.less", "./src/less/*.less", "../avoindata-theme/less"],
+    ["./src/less/**/*.less", "./src/less/*.less", "../avoindata-drupal-theme/less"],
     gulp.series(
       "drupal",
       "drupal_copy_custom_element_styles_to_plugin",

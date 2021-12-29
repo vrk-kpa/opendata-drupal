@@ -6,7 +6,9 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Component\Utility\Xss;
 use Drupal\Component\Serialization\Json;
+use League\CommonMark\CommonMarkConverter;
 use Drupal\Core\Security\TrustedCallbackInterface;
 
 /**
@@ -62,6 +64,10 @@ function create_dataset_table_rows($dataset_list, $date_type) {
         : $dataset['notes_translated']['fi']
       );
 
+      $converter = new CommonMarkConverter();
+      $translated_description = $converter->convertToHtml($translated_description);
+      $translated_description = Xss::filter($translated_description, array('p'));
+
       $translated_label = strtoupper(t('Modified'));
 
       $resultHTML .= <<<EOT
@@ -79,16 +85,7 @@ EOT;
 
 class AvoindataDatasetHandler implements TrustedCallbackInterface
 {
-  protected $nginx_host;
-  protected $nginx_port;
-  protected $nginx_url;
 
-  function __construct()
-  {
-    $this->nginx_host = getenv('NGINX_HOST') !== false ? getenv('NGINX_HOST') : 'localhost';
-    $this->nginx_port = getenv('NGINX_HOST') !== false ? '' : '8080';
-    $this->nginx_url = 'http://' . $this->nginx_host . ':' . $this->nginx_port . '/data';
-  }
 
   /**
    * Gets recent datasets from Ckan and specifies that they won't be cached.
@@ -98,12 +95,12 @@ class AvoindataDatasetHandler implements TrustedCallbackInterface
     $client = \Drupal::httpClient();
     try {
       $recentDatasetsResponse = $client->request('GET',
-        $this->nginx_url . '/api/action/package_search?sort=metadata_modified%20desc&facet.limit=1&rows=3'
+        'http://localhost:8080/data/api/action/package_search?sort=metadata_modified%20desc&facet.limit=1&rows=3'
       );
       $recentDatasetsResult = Json::decode($recentDatasetsResponse->getBody());
       $recentDatasets = $recentDatasetsResult['result']['results'];
     } catch (\Exception $e) {
-      $recentDatasets = array();
+      $recentDatasets = NULL;
     }
 
     return [
@@ -120,12 +117,12 @@ class AvoindataDatasetHandler implements TrustedCallbackInterface
     $client = \Drupal::httpClient();
     try {
       $newDatasetsResponse = $client->request('GET',
-        $this->nginx_url . '/api/action/package_search?sort=metadata_created%20desc&facet.limit=1&rows=3'
+        'http://localhost:8080/data/api/action/package_search?sort=metadata_created%20desc&facet.limit=1&rows=3'
       );
       $newDatasetsResult = Json::decode($newDatasetsResponse->getBody());
       $newDatasets = $newDatasetsResult['result']['results'];
     } catch (\Exception $e) {
-      $newDatasets = array();
+      $newDatasets = NULL;
     }
 
     return [
@@ -142,12 +139,12 @@ class AvoindataDatasetHandler implements TrustedCallbackInterface
     $client = \Drupal::httpClient();
     try {
       $popularDatasetsResponse = $client->request('GET',
-        $this->nginx_url . '/api/action/package_search?sort=views_recent%20desc&facet.limit=1&rows=3'
+        'http://localhost:8080/data/api/action/package_search?sort=views_recent%20desc&facet.limit=1&rows=3'
       );
       $popularDatasetsResult = Json::decode($popularDatasetsResponse->getBody());
       $popularDatasets = $popularDatasetsResult['result']['results'];
     } catch (\Exception $e) {
-      $popularDatasets = array();
+      $popularDatasets = NULL;
     }
 
     return [
