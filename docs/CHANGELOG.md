@@ -1,3 +1,13 @@
+## [1.2.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.2.0...v1.2.1) (2021-12-30)
+
+
+### Bug Fixes
+
+* **AV-1569:** apply docker/ecs env related changes to updated modules ([717ab5b](https://github.com/vrk-kpa/opendata-drupal/commit/717ab5bd16f27a974c500c4462217bee3f78b134))
+* **AV-1569:** correct path issues in frontend project ([816c553](https://github.com/vrk-kpa/opendata-drupal/commit/816c5536b64dcfaef7dc4bfb674e215b14d0e371))
+* **AV-1569:** update i18n ([f935bf2](https://github.com/vrk-kpa/opendata-drupal/commit/f935bf2814d51583cf20b86cde4e1d36cd65da97))
+* **AV-1569:** update modules from main repo + fix line endings to LF ([76ab35a](https://github.com/vrk-kpa/opendata-drupal/commit/76ab35aa445468cae018540580f430290f356b17))
+
 # [1.2.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.1.2...v1.2.0) (2021-12-28)
 
 
