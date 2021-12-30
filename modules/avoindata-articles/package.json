@@ -1,5 +1,5 @@
 {
-  "name": "avoindata-articles",
+  "name": "avoindata-drupal-articles",
   "version": "1.0.0",
   "description": "avoindata drupal articles module",
   "sideEffects": false,
