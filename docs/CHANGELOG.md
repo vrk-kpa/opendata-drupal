@@ -1,3 +1,11 @@
+## [1.2.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.2.1...v1.2.2) (2021-12-31)
+
+
+### Bug Fixes
+
+* **AV-1569:** improve init_filesystems script ([c5dfc68](https://github.com/vrk-kpa/opendata-drupal/commit/c5dfc688c9a414272182e3bb154bf4c9da998710))
+* **ci:** simplify release job to mitigate random AWS OIDC problems ([66f550b](https://github.com/vrk-kpa/opendata-drupal/commit/66f550be5ec9daecadbb3af40efda140ee590304))
+
 ## [1.2.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.2.0...v1.2.1) (2021-12-30)
 
 
