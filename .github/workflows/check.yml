@@ -27,13 +27,13 @@ jobs:
           working-directory: ./drupal/
 
       - name: Ignore warnings on exit code
-        run: phpcs --config-set ignore_warnings_on_exit 1
+        run: ./vendor/bin/phpcs --config-set ignore_warnings_on_exit 1
         working-directory: ./drupal/
 
       - name: Run codesniffer for drupal standard
-        run: phpcs --standard=Drupal $GITHUB_WORKSPACE/modules --ignore=ytp-assets-common
+        run: ./vendor/bin/phpcs --standard=Drupal $GITHUB_WORKSPACE/modules --ignore=ytp-assets-common
         working-directory: ./drupal/
 
       - name: Run codesniffer for drupal practice
-        run: phpcs --standard=DrupalPractice $GITHUB_WORKSPACE/modules --ignore=ytp-assets-common
+        run: ./vendor/bin/phpcs --standard=DrupalPractice $GITHUB_WORKSPACE/modules --ignore=ytp-assets-common
         working-directory: ./drupal/
