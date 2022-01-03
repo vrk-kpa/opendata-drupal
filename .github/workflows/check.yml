@@ -11,8 +11,6 @@ jobs:
     container: php:7.4
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: recursive
 
       - name: Install PHP 7.4
         uses: "shivammathur/setup-php@v2"
