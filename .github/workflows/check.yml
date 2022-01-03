@@ -1,0 +1,40 @@
+name: Code quality
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  code-sniffer:
+    name: code-sniffer
+    runs-on: ubuntu-latest
+    container: php:7.4
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Install PHP 7.4
+        uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "7.4"
+          extensions: gd
+
+      - name: Install composer
+        uses: "ramsey/composer-install@v2"
+
+      - name: Composer install
+        run: composer install -n --prefer-dist
+        working-directory: ./drupal/
+
+      - name: Ignore warnings on exit code
+        run: phpcs --config-set ignore_warnings_on_exit 1
+        working-directory: ./drupal/
+
+      - name: Run codesniffer for drupal standard
+        run: phpcs --standard=Drupal $GITHUB_WORKSPACE/modules --ignore=ytp-assets-common
+        working-directory: ./drupal/
+
+      - name: Run codesniffer for drupal practice
+        run: phpcs --standard=DrupalPractice $GITHUB_WORKSPACE/modules --ignore=ytp-assets-common
+        working-directory: ./drupal/
