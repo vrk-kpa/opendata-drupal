@@ -23,9 +23,6 @@ jobs:
 
       - name: Install composer
         uses: "ramsey/composer-install@v2"
-
-      - name: Composer install
-        run: composer install -n --prefer-dist
         working-directory: ./drupal/
 
       - name: Ignore warnings on exit code
