@@ -21,9 +21,10 @@ jobs:
           php-version: "7.4"
           extensions: gd
 
-      - name: Install composer
+      - name: Composer install
         uses: "ramsey/composer-install@v2"
-        working-directory: ./drupal/
+        with:
+          working-directory: ./drupal/
 
       - name: Ignore warnings on exit code
         run: phpcs --config-set ignore_warnings_on_exit 1
