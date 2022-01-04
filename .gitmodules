@@ -1,0 +1,3 @@
+[submodule "modules/opendata-assets"]
+	path = modules/opendata-assets
+	url = https://github.com/vrk-kpa/opendata-assets.git
