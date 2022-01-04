@@ -31,9 +31,9 @@ jobs:
         working-directory: ./drupal/
 
       - name: Run codesniffer for drupal standard
-        run: ./vendor/bin/phpcs --standard=Drupal $GITHUB_WORKSPACE/modules --ignore=ytp-assets-common
+        run: ./vendor/bin/phpcs --standard=Drupal $GITHUB_WORKSPACE/modules --ignore=opendata-assets
         working-directory: ./drupal/
 
       - name: Run codesniffer for drupal practice
-        run: ./vendor/bin/phpcs --standard=DrupalPractice $GITHUB_WORKSPACE/modules --ignore=ytp-assets-common
+        run: ./vendor/bin/phpcs --standard=DrupalPractice $GITHUB_WORKSPACE/modules --ignore=opendata-assets
         working-directory: ./drupal/

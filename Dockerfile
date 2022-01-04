@@ -76,7 +76,7 @@ ENV WEB_DIR=${APP_DIR}/web
 ENV MOD_DIR=${WEB_DIR}/modules
 
 # copy custom modules
-RUN mkdir -p ${MOD_DIR}
+RUN mkdir -p ${MOD_DIR} && mkdir -p ${WEB_DIR}/frontend
 COPY modules/avoindata-header               ${MOD_DIR}/avoindata-header/
 COPY modules/avoindata-servicemessage       ${MOD_DIR}/avoindata-servicemessage/
 COPY modules/avoindata-hero                 ${MOD_DIR}/avoindata-hero/
@@ -94,12 +94,11 @@ COPY modules/avoindata-ckeditor-plugins     ${MOD_DIR}/avoindata-ckeditor-plugin
 COPY modules/avoindata-theme                ${MOD_DIR}/avoindata-theme/
 
 # copy frontend
-COPY modules/ytp-assets-common              ${MOD_DIR}/ytp-assets-common/
-COPY drupal/build_frontend.sh               ${MOD_DIR}/ytp-assets-common/build_frontend.sh
-COPY drupal/package.default.json            ${MOD_DIR}/ytp-assets-common/package.default.json
+COPY modules/opendata-assets                ${MOD_DIR}/opendata-assets/
+COPY frontend                               ${WEB_DIR}/frontend/
 
 # build frontend
-WORKDIR ${MOD_DIR}/ytp-assets-common/
+WORKDIR ${WEB_DIR}/frontend/
 RUN chmod +x ./build_frontend.sh
 RUN --mount=type=secret,id=npmrc ./build_frontend.sh
 
@@ -113,7 +112,7 @@ COPY --from=modules_build ${MOD_DIR} ${MOD_DIR}
 RUN mv ${MOD_DIR}/avoindata-theme ${THEME_DIR}/avoindata/
 
 # install frontend
-RUN mkdir -p ${WWW_DIR} && mv ${MOD_DIR}/ytp-assets-common/resources        ${WWW_DIR}/ && \
+RUN mkdir -p ${WWW_DIR} && mv ${MOD_DIR}/opendata-assets/resources        ${WWW_DIR}/ && \
     cp -rf ${WWW_DIR}/resources/vendor/@fortawesome/fontawesome/webfonts/.  ${THEME_DIR}/avoindata/fonts && \
     cp -rf ${WWW_DIR}/resources/vendor/bootstrap/dist/fonts/.               ${THEME_DIR}/avoindata/fonts
 
