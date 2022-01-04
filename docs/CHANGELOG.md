@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/vrk-kpa/opendata-drupal/compare/v1.2.2...v1.2.3) (2022-01-04)
+
+
+### Bug Fixes
+
+* necessary structural changes for using opendata-frontend as a submodule ([694cee0](https://github.com/vrk-kpa/opendata-drupal/commit/694cee05177fddac483eb783aec4c77a0312e173))
+
 ## [1.2.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.2.1...v1.2.2) (2021-12-31)
 
 
