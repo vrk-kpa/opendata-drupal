@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/vrk-kpa/opendata-drupal/compare/v1.2.3...v1.2.4) (2022-01-05)
+
+
+### Bug Fixes
+
+* correct some module references in frontend gulpfile ([392c7bd](https://github.com/vrk-kpa/opendata-drupal/commit/392c7bd7baed313be1434b94775fcf0792f44ee0))
+
 ## [1.2.3](https://github.com/vrk-kpa/opendata-drupal/compare/v1.2.2...v1.2.3) (2022-01-04)
 
 
