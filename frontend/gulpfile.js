@@ -115,7 +115,7 @@ gulp.task("drupal", (done) => {
     cleancss({ keepBreaks: false }),
     concat("style.css"),
     sourcemaps.write("./maps"),
-    gulp.dest(root_dir + "../avoindata-drupal-theme/css"),
+    gulp.dest(root_dir + "../avoindata-theme/css"),
   ], done)
 });
 
@@ -131,7 +131,7 @@ gulp.task("drupal_copy_custom_element_styles_to_plugin", (done) => {
     cleancss({ keepBreaks: false }),
     concat("style.css"),
     sourcemaps.write("./maps"),
-    gulp.dest(root_dir + "../avoindata-drupal-ckeditor-plugins/css"),
+    gulp.dest(root_dir + "../avoindata-ckeditor-plugins/css"),
   ], done)
 });
 
@@ -355,7 +355,7 @@ gulp.task("watch_styles", () => {
 
 gulp.task("watch_drupal_styles", () => {
   var watcher = gulp.watch(
-    [root_dir + "src/less/**/*.less", root_dir + "src/less/*.less", root_dir + "../avoindata-drupal-theme/less"],
+    [root_dir + "src/less/**/*.less", root_dir + "src/less/*.less", root_dir + "../avoindata-theme/less"],
     gulp.series(
       "drupal",
       "drupal_copy_custom_element_styles_to_plugin",
