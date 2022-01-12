@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.2.4...v1.3.0) (2022-01-12)
+
+
+### Features
+
+* add optional integration to dynatrace ([1a2b4ac](https://github.com/vrk-kpa/opendata-drupal/commit/1a2b4ac8e3f038190f0fbed5c763eca5eabd32f2))
+
 ## [1.2.4](https://github.com/vrk-kpa/opendata-drupal/compare/v1.2.3...v1.2.4) (2022-01-05)
 
 
