@@ -1,3 +1,7 @@
+# build args
+ARG SECRET_NPMRC
+ARG DYNATRACE_ENABLED=0
+
 #
 # Drupal build
 #
@@ -60,9 +64,6 @@ ENTRYPOINT ["/opt/drupal/scripts/entrypoint.sh"]
 #
 FROM ubuntu:focal AS modules_build
 
-# build args
-ARG SECRET_NPMRC
-
 # install required packages
 RUN apt-get update -yq && apt-get install -yq curl
 
@@ -103,9 +104,26 @@ RUN chmod +x ./build_frontend.sh
 RUN --mount=type=secret,id=npmrc ./build_frontend.sh
 
 #
+# Production stage, dynatrace enabled
+#
+FROM drupal_build AS production-dynatrace-1
+
+# install dynatrace oneagent
+# https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/amazon-web-services/deploy-oneagent-on-aws-fargate
+COPY --from=ayv41550.live.dynatrace.com/linux/oneagent-codemodules:php / /
+ENV LD_PRELOAD=/opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
+
+#
+# Production stage, dynatrace disabled
+#
+FROM drupal_build AS production-dynatrace-0
+
+# do nothing :^)
+
+#
 # Production image
 #
-FROM drupal_build
+FROM production-dynatrace-${DYNATRACE_ENABLED} AS production
 
 # copy modules and themes
 COPY --from=modules_build ${MOD_DIR} ${MOD_DIR}

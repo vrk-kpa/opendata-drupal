@@ -31,6 +31,14 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: login to DynaTrace Registry
+        id: login-dtr
+        uses: docker/login-action@v1 
+        with:
+          registry: ${{ secrets.DYNATRACE_USERNAME }}.live.dynatrace.com
+          username: ${{ secrets.DYNATRACE_USERNAME }}
+          password: ${{ secrets.DYNATRACE_TOKEN }}
+
       - name: build docker image
         uses: docker/build-push-action@v2
         with:
@@ -39,6 +47,21 @@ jobs:
           tags: |
             opendata/drupal:${{ github.sha }}
             opendata/drupal:latest
+          secret-files: |
+            npmrc=./.npmrc
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: build docker image (dynatrace)
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: false
+          tags: |
+            opendata/drupal:${{ github.sha }}-dynatrace
+            opendata/drupal:latest-dynatrace
+          build-args: |
+            DYNATRACE_ENABLED=1
           secret-files: |
             npmrc=./.npmrc
           cache-from: type=gha
