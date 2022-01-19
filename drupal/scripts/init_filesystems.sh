@@ -3,8 +3,10 @@ set -e
 
 if [[ "${DEV_MODE}" == "true" ]]; then
   # init mounted filesystems
-  echo "init_filesystems - DEV_MODE = 'true', initializing '${WWW_DIR}/resources' ..."
+  echo "init_filesystems - DEV_MODE = 'true', initializing '${WWW_DIR}/resources' and installing fonts ..."
   rsync -au --delete ${MOD_DIR}/opendata-assets/resources/ ${WWW_DIR}/resources
+  cp -rf ${WWW_DIR}/resources/vendor/@fortawesome/fontawesome/webfonts/.  ${THEME_DIR}/avoindata/fonts && \
+  cp -rf ${WWW_DIR}/resources/vendor/bootstrap/dist/fonts/.               ${THEME_DIR}/avoindata/fonts
 else
   # migrate data if migration fs is mounted to known path
   # NOTE: this is a bad idea, because EFS->EFS rsync perf is so bad!
