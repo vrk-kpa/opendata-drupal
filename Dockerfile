@@ -57,6 +57,9 @@ FROM drupal_build as drupal_development
 
 ENV DEV_MODE=true
 
+# install drupal dev requirements
+RUN composer require --no-interaction --no-cache --dev drupal/devel
+
 ENTRYPOINT ["/opt/drupal/scripts/entrypoint.sh"]
 
 #

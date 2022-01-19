@@ -10,6 +10,16 @@ jinja2 ${TEMPLATE_DIR}/services.yml.j2 -o ${SITE_DIR}/default/services.yml
 # rebuild cache
 drush cache:rebuild
 
+# init local development related stuff
+if [[ "${DEV_MODE}" == "true" ]]; then
+  # apply jinja2 templates
+  jinja2 ${TEMPLATE_DIR}/settings.local.php.j2 -o ${SITE_DIR}/default/settings.local.php
+  jinja2 ${TEMPLATE_DIR}/development.services.yml.j2 -o ${SITE_DIR}/development.services.yml
+  
+  # enable devel module
+  drush pm:enable -y devel
+fi
+
 # apply jinja2 templates
 jinja2 --format=yaml ${TEMPLATE_DIR}/site_config/disqus.settings.yml.j2    -o ${APP_DIR}/site_config/disqus.settings.yml
 jinja2 --format=yaml ${TEMPLATE_DIR}/site_config/matomo.settings.yml.j2    -o ${APP_DIR}/site_config/matomo.settings.yml

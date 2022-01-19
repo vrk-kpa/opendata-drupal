@@ -26,6 +26,16 @@ jinja2 ${TEMPLATE_DIR}/services.yml.j2 -o ${SITE_DIR}/default/services.yml
 drush updatedb -y --no-cache-clear
 drush cache:rebuild
 
+# init local development related stuff
+if [[ "${DEV_MODE}" == "true" ]]; then
+  # apply jinja2 templates
+  jinja2 ${TEMPLATE_DIR}/settings.local.php.j2 -o ${SITE_DIR}/default/settings.local.php
+  jinja2 ${TEMPLATE_DIR}/development.services.yml.j2 -o ${SITE_DIR}/development.services.yml
+  
+  # enable devel module
+  drush pm:enable -y devel
+fi
+
 # enable language modules, add languages and set default
 drush pm:enable -y config_translation
 drush pm:enable -y content_translation
