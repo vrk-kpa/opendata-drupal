@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.3.0...v1.3.1) (2022-01-19)
+
+
+### Bug Fixes
+
+* add configs for local dev mode to improve developer experience ([bc19ea9](https://github.com/vrk-kpa/opendata-drupal/commit/bc19ea9a5cedb3ad215dbc62059a5434724ab1ec))
+
 # [1.3.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.2.4...v1.3.0) (2022-01-12)
 
 
