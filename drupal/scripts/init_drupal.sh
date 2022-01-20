@@ -9,7 +9,7 @@ echo "init_drupal ..."
 # init database if not exists (return value is 0 and result is 0 rows)
 DB_CHECK_SQL="SELECT 1 FROM pg_tables WHERE schemaname='public' AND tablename='node'"
 DB_CHECK_RES=$(PGPASSWORD="${DB_DRUPAL_PASS}" psql -tA -h "${DB_HOST}" -U "${DB_DRUPAL_USER}" -d "${DB_DRUPAL}" -c "${DB_CHECK_SQL}")
-if [ $? -eq 0 ] && [[ -z "${DB_CHECK_RES// }" ]]; then
+if [ $? -eq 0 ] && [[ -z "${DB_CHECK_RES}" ]]; then
   drush site:install -y standard \
     --db-url="pgsql://${DB_DRUPAL_USER}:${DB_DRUPAL_PASS}@${DB_HOST}:5432/${DB_DRUPAL}" \
     --account-name="${SYSADMIN_USER}" \
@@ -36,64 +36,72 @@ if [[ "${DEV_MODE}" == "true" ]]; then
   drush pm:enable -y devel
 fi
 
-# enable language modules, add languages and set default
-drush pm:enable -y config_translation
-drush pm:enable -y content_translation
-drush pm:enable -y language
-drush pm:enable -y locale
-drush pm:enable -y drush_language
-drush language:add -y "fi"
-drush language:add -y "sv"
+# get current modules
+MODULE_INFO=$(drush pm:list --status enabled --field=name)
+
+# enable language modules
+[[ "$MODULE_INFO" != *"config_translation"* ]]  && drush pm:enable -y config_translation
+[[ "$MODULE_INFO" != *"content_translation"* ]] && drush pm:enable -y content_translation
+[[ "$MODULE_INFO" != *"language"* ]]            && drush pm:enable -y language
+[[ "$MODULE_INFO" != *"locale"* ]]              && drush pm:enable -y locale
+[[ "$MODULE_INFO" != *"drush_language"* ]]      && drush pm:enable -y drush_language
+
+# get current languages
+LANG_INFO=$(drush language-info --field=language)
+
+# add languages and set 'fi' as default
+[[ "$LANG_INFO" != *"Finnish"* ]] && drush language:add -y "fi"
+[[ "$LANG_INFO" != *"Swedish"* ]] && drush language:add -y "sv"
 drush language:default -y "fi"
 
 # enable base theme
 drush theme:enable -y bootstrap
 
-# uninstall disabled modules
-drush pm:uninstall -y search
-drush pm:uninstall -y contextual
-drush pm:uninstall -y page_cache
+# uninstall modules
+[[ "$MODULE_INFO" == *"search"* ]]      && drush pm:uninstall -y search
+[[ "$MODULE_INFO" == *"contextual"* ]]  && drush pm:uninstall -y contextual
+[[ "$MODULE_INFO" == *"page_cache"* ]]  && drush pm:uninstall -y page_cache
 
-# enable extra modules
-drush pm:enable -y twig_tweak
-drush pm:enable -y fontawesome_menu_icons
-drush pm:enable -y smtp
-drush pm:enable -y pathauto
-drush pm:enable -y easy_breadcrumb
-drush pm:enable -y twig_field_value
-drush pm:enable -y disqus
-drush pm:enable -y redirect
-drush pm:enable -y search_api
-drush pm:enable -y search_api_db
-drush pm:enable -y search_api_db_defaults
-drush pm:enable -y token
-drush pm:enable -y metatag
-drush pm:enable -y metatag_open_graph
-drush pm:enable -y ape
-drush pm:enable -y honeypot
-drush pm:enable -y domain_registration
-drush pm:enable -y protected_submissions
-drush pm:enable -y recaptcha
-drush pm:enable -y unpublished_node_permissions
-drush pm:enable -y menu_item_role_access
-drush pm:enable -y matomo
-drush pm:enable -y upgrade_status
+# enable modules
+[[ "$MODULE_INFO" != *"twig_tweak"* ]]                    && drush pm:enable -y twig_tweak
+[[ "$MODULE_INFO" != *"fontawesome_menu_icons"* ]]        && drush pm:enable -y fontawesome_menu_icons
+[[ "$MODULE_INFO" != *"smtp"* ]]                          && drush pm:enable -y smtp
+[[ "$MODULE_INFO" != *"pathauto"* ]]                      && drush pm:enable -y pathauto
+[[ "$MODULE_INFO" != *"easy_breadcrumb"* ]]               && drush pm:enable -y easy_breadcrumb
+[[ "$MODULE_INFO" != *"twig_field_value"* ]]              && drush pm:enable -y twig_field_value
+[[ "$MODULE_INFO" != *"disqus"* ]]                        && drush pm:enable -y disqus
+[[ "$MODULE_INFO" != *"redirect"* ]]                      && drush pm:enable -y redirect
+[[ "$MODULE_INFO" != *"search_api"* ]]                    && drush pm:enable -y search_api
+[[ "$MODULE_INFO" != *"search_api_db"* ]]                 && drush pm:enable -y search_api_db
+[[ "$MODULE_INFO" != *"search_api_db_defaults"* ]]        && drush pm:enable -y search_api_db_defaults
+[[ "$MODULE_INFO" != *"token"* ]]                         && drush pm:enable -y token
+[[ "$MODULE_INFO" != *"metatag"* ]]                       && drush pm:enable -y metatag
+[[ "$MODULE_INFO" != *"metatag_open_graph"* ]]            && drush pm:enable -y metatag_open_graph
+[[ "$MODULE_INFO" != *"ape"* ]]                           && drush pm:enable -y ape
+[[ "$MODULE_INFO" != *"honeypot"* ]]                      && drush pm:enable -y honeypot
+[[ "$MODULE_INFO" != *"domain_registration"* ]]           && drush pm:enable -y domain_registration
+[[ "$MODULE_INFO" != *"protected_submissions"* ]]         && drush pm:enable -y protected_submissions
+[[ "$MODULE_INFO" != *"recaptcha"* ]]                     && drush pm:enable -y recaptcha
+[[ "$MODULE_INFO" != *"unpublished_node_permissions"* ]]  && drush pm:enable -y unpublished_node_permissions
+[[ "$MODULE_INFO" != *"menu_item_role_access"* ]]         && drush pm:enable -y menu_item_role_access
+[[ "$MODULE_INFO" != *"matomo"* ]]                        && drush pm:enable -y matomo
+[[ "$MODULE_INFO" != *"upgrade_status"* ]]                && drush pm:enable -y upgrade_status
 
 # enable custom modules
-drush pm:enable -y avoindata_header
-drush pm:enable -y avoindata_servicemessage
-drush pm:enable -y avoindata_hero
-drush pm:enable -y avoindata_categories
-drush pm:enable -y avoindata_infobox
-drush pm:enable -y avoindata_datasetlist
-drush pm:enable -y avoindata_newsfeed
-drush pm:enable -y avoindata_appfeed
-drush pm:enable -y avoindata_footer
-drush pm:enable -y avoindata_articles
-drush pm:enable -y avoindata_events
-drush pm:enable -y avoindata_guide
-drush pm:enable -y avoindata_user
-drush pm:enable -y avoindata_ckeditor_plugins
+[[ "$MODULE_INFO" != *"avoindata_header"* ]]            && drush pm:enable -y avoindata_header
+[[ "$MODULE_INFO" != *"avoindata_servicemessage"* ]]    && drush pm:enable -y avoindata_servicemessage
+[[ "$MODULE_INFO" != *"avoindata_hero"* ]]              && drush pm:enable -y avoindata_hero
+[[ "$MODULE_INFO" != *"avoindata_categories"* ]]        && drush pm:enable -y avoindata_categories
+[[ "$MODULE_INFO" != *"avoindata_infobox"* ]]           && drush pm:enable -y avoindata_infobox
+[[ "$MODULE_INFO" != *"avoindata_datasetlist"* ]]       && drush pm:enable -y avoindata_datasetlist
+[[ "$MODULE_INFO" != *"avoindata_newsfeed"* ]]          && drush pm:enable -y avoindata_newsfeed
+[[ "$MODULE_INFO" != *"avoindata_appfeed"* ]]           && drush pm:enable -y avoindata_appfeed
+[[ "$MODULE_INFO" != *"avoindata_footer"* ]]            && drush pm:enable -y avoindata_footer
+[[ "$MODULE_INFO" != *"avoindata_articles"* ]]          && drush pm:enable -y avoindata_articles
+[[ "$MODULE_INFO" != *"avoindata_events"* ]]            && drush pm:enable -y avoindata_events
+[[ "$MODULE_INFO" != *"avoindata_guide"* ]]             && drush pm:enable -y avoindata_guide
+[[ "$MODULE_INFO" != *"avoindata_user"* ]]              && drush pm:enable -y avoindata_user
+[[ "$MODULE_INFO" != *"avoindata_ckeditor_plugins"* ]]  && drush pm:enable -y avoindata_ckeditor_plugins
 
 # remove some configurations
 # NOTE: ansible role skips errors with this condition:
@@ -153,10 +161,30 @@ drush config:import -y --partial --source ${APP_DIR}/site_config
 # rebuild cache
 drush cache:rebuild
 
-# update translations
-drush language:import:translations ${I18N_DIR}/fi/drupal8.po     --langcode "fi"
-drush language:import:translations ${I18N_DIR}/sv/drupal8.po     --langcode "sv"
-drush language:import:translations ${I18N_DIR}/en_GB/drupal8.po  --langcode "en"
+# update translations (if file has changed, otherwise skip)
+SHA1_I18N_FI=$(sha1sum ${I18N_DIR}/fi/drupal8.po)
+if [[ "$SHA1_I18N_FI" != "$(cat ${SITE_DIR}/.sha1_18n_fi)" ]]; then
+  drush language:import:translations ${I18N_DIR}/fi/drupal8.po --langcode "fi"
+  echo "$SHA1_I18N_FI" > ${SITE_DIR}/.sha1_18n_fi
+else
+  echo "skipping import of 'fi' i18n because file hasn't changed ..."
+fi
+
+SHA1_I18N_SV=$(sha1sum ${I18N_DIR}/sv/drupal8.po)
+if [[ "$SHA1_I18N_SV" != "$(cat ${SITE_DIR}/.sha1_18n_sv)" ]]; then
+  drush language:import:translations ${I18N_DIR}/sv/drupal8.po --langcode "sv"
+  echo "$SHA1_I18N_SV" > ${SITE_DIR}/.sha1_18n_sv
+else
+  echo "skipping import of 'sv' i18n because file hasn't changed ..."
+fi
+
+SHA1_I18N_EN=$(sha1sum ${I18N_DIR}/en_GB/drupal8.po)
+if [[ "$SHA1_I18N_EN" != "$(cat ${SITE_DIR}/.sha1_18n_en)" ]]; then
+  drush language:import:translations ${I18N_DIR}/en_GB/drupal8.po --langcode "en"
+  echo "$SHA1_I18N_EN" > ${SITE_DIR}/.sha1_18n_en
+else
+  echo "skipping import of 'en' i18n because file hasn't changed ..."
+fi
 
 # init users and roles
 python3 ${SCRIPT_DIR}/init_users.py
