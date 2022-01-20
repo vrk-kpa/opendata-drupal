@@ -1,3 +1,11 @@
+## [1.3.3](https://github.com/vrk-kpa/opendata-drupal/compare/v1.3.2...v1.3.3) (2022-01-20)
+
+
+### Bug Fixes
+
+* improve init_drupal.sh execution time significantly against already initialized db ([3152e30](https://github.com/vrk-kpa/opendata-drupal/commit/3152e30df638d77eb948f565412d9279af99b8b8))
+* remove EFS migration procedure from init_filesystems.sh ([0613b09](https://github.com/vrk-kpa/opendata-drupal/commit/0613b0995409e79365af4d227bfc530f70179ca0))
+
 ## [1.3.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.3.1...v1.3.2) (2022-01-19)
 
 
