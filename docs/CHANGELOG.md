@@ -1,3 +1,11 @@
+## [1.3.4](https://github.com/vrk-kpa/opendata-drupal/compare/v1.3.3...v1.3.4) (2022-01-21)
+
+
+### Bug Fixes
+
+* **AV-1569:** update modules from main repo ([994638f](https://github.com/vrk-kpa/opendata-drupal/commit/994638fcc49c2fb85a805f1cbeb67e5dfc6ce2ae))
+* **AV-1569:** update submodules ([00e3358](https://github.com/vrk-kpa/opendata-drupal/commit/00e33580ad1649a179a055a9e7e27c880c9a84b4))
+
 ## [1.3.3](https://github.com/vrk-kpa/opendata-drupal/compare/v1.3.2...v1.3.3) (2022-01-20)
 
 
