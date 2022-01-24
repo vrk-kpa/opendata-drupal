@@ -141,10 +141,12 @@ RUN mkdir -p ${WWW_DIR} && mv ${MOD_DIR}/opendata-assets/resources        ${WWW_
 RUN mkdir -p ${BASE_DIR} && \
     mv ${SITE_DIR} ${BASE_DIR}/sites && \
     mv ${THEME_DIR} ${BASE_DIR}/themes && \
+    mv ${MOD_DIR} ${BASE_DIR}/modules && \
     mv ${CORE_DIR} ${BASE_DIR}/core && \
     mv ${WWW_DIR}/resources ${BASE_DIR}/resources && \
     mkdir -p ${SITE_DIR} && \
     mkdir -p ${THEME_DIR} && \
+    mkdir -p ${MOD_DIR} && \
     mkdir -p ${CORE_DIR} && \
     mkdir -p ${WWW_DIR}/resources
 
