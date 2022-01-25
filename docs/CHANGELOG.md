@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.3.5...v1.4.0) (2022-01-25)
+
+
+### Features
+
+* **AV-1614:** switch php-fpm with apache, simplifies volumes significantly ([53e179f](https://github.com/vrk-kpa/opendata-drupal/commit/53e179ffa6e8ce767887bad2efbe6648c68c865f))
+
 ## [1.3.5](https://github.com/vrk-kpa/opendata-drupal/compare/v1.3.4...v1.3.5) (2022-01-25)
 
 
