@@ -5,7 +5,7 @@ ARG DYNATRACE_ENABLED=0
 #
 # Drupal build
 #
-FROM drupal:9.2-php7.4-fpm-buster AS drupal_build
+FROM drupal:9.2-php7.4-apache-buster AS drupal_build
 
 # upgrade system + install required packages
 RUN apt-get update -yq && \
@@ -31,7 +31,7 @@ ENV SITE_DIR=${WEB_DIR}/sites
 ENV MOD_DIR=${WEB_DIR}/modules
 ENV THEME_DIR=${WEB_DIR}/themes
 ENV CORE_DIR=${WEB_DIR}/core
-ENV BASE_DIR=/opt/base
+ENV DATA_DIR=${SITE_DIR}/default/files
 ENV WWW_DIR=/var/www
 
 # copy app files
@@ -49,6 +49,9 @@ RUN chmod +x ${SCRIPT_DIR}/*.sh && \
 
 # install composer project
 RUN composer install --no-cache
+
+# create symbolic links
+RUN ln -s ${MOD_DIR}/opendata-assets/resources ${WWW_DIR}/html/resources
 
 #
 # Development image (For local development)
@@ -130,24 +133,8 @@ FROM production-dynatrace-${DYNATRACE_ENABLED} AS production
 
 # copy modules and themes
 COPY --from=modules_build ${MOD_DIR} ${MOD_DIR}
-RUN mv ${MOD_DIR}/avoindata-theme ${THEME_DIR}/avoindata/
-
-# install frontend
-RUN mkdir -p ${WWW_DIR} && mv ${MOD_DIR}/opendata-assets/resources        ${WWW_DIR}/ && \
-    cp -rf ${WWW_DIR}/resources/vendor/@fortawesome/fontawesome/webfonts/.  ${THEME_DIR}/avoindata/fonts && \
-    cp -rf ${WWW_DIR}/resources/vendor/bootstrap/dist/fonts/.               ${THEME_DIR}/avoindata/fonts
-
-# setup base directory that is used for initializing shared file systems
-RUN mkdir -p ${BASE_DIR} && \
-    mv ${SITE_DIR} ${BASE_DIR}/sites && \
-    mv ${THEME_DIR} ${BASE_DIR}/themes && \
-    mv ${MOD_DIR} ${BASE_DIR}/modules && \
-    mv ${CORE_DIR} ${BASE_DIR}/core && \
-    mv ${WWW_DIR}/resources ${BASE_DIR}/resources && \
-    mkdir -p ${SITE_DIR} && \
-    mkdir -p ${THEME_DIR} && \
-    mkdir -p ${MOD_DIR} && \
-    mkdir -p ${CORE_DIR} && \
-    mkdir -p ${WWW_DIR}/resources
+RUN mv ${MOD_DIR}/avoindata-theme ${THEME_DIR}/avoindata/ && \
+    cp -rf ${WWW_DIR}/html/resources/vendor/@fortawesome/fontawesome/webfonts/.  ${THEME_DIR}/avoindata/fonts && \
+    cp -rf ${WWW_DIR}/html/resources/vendor/bootstrap/dist/fonts/.               ${THEME_DIR}/avoindata/fonts
 
 ENTRYPOINT ["/opt/drupal/scripts/entrypoint.sh"]
