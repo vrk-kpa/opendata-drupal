@@ -1,3 +1,11 @@
+## [1.3.5](https://github.com/vrk-kpa/opendata-drupal/compare/v1.3.4...v1.3.5) (2022-01-25)
+
+
+### Bug Fixes
+
+* **AV-1612:** remove old avoindata-ckeditor-plugins src files ([353c425](https://github.com/vrk-kpa/opendata-drupal/commit/353c425323ba64ca7c89f8dd90a5a5dbcd35ceb8))
+* **AV-1612:** setup drupal modules dir to be a shared volume (docker or EFS) ([6538fef](https://github.com/vrk-kpa/opendata-drupal/commit/6538fef24449a588cf3c88cf5cdb979f7542ed0e))
+
 ## [1.3.4](https://github.com/vrk-kpa/opendata-drupal/compare/v1.3.3...v1.3.4) (2022-01-21)
 
 
