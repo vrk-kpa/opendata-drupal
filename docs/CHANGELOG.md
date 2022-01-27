@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.4.0...v1.4.1) (2022-01-27)
+
+
+### Bug Fixes
+
+* update drupal from 9.2.8 to 9.3.3 ([9eeb103](https://github.com/vrk-kpa/opendata-drupal/commit/9eeb10363016ddd351be968c280607e50d24c3dd))
+
 # [1.4.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.3.5...v1.4.0) (2022-01-25)
 
 
