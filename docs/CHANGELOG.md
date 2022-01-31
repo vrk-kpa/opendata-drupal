@@ -1,3 +1,25 @@
+## [1.4.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.4.0...v1.4.1) (2022-01-27)
+
+
+### Bug Fixes
+
+* update drupal from 9.2.8 to 9.3.3 ([9eeb103](https://github.com/vrk-kpa/opendata-drupal/commit/9eeb10363016ddd351be968c280607e50d24c3dd))
+
+# [1.4.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.3.5...v1.4.0) (2022-01-25)
+
+
+### Features
+
+* **AV-1614:** switch php-fpm with apache, simplifies volumes significantly ([53e179f](https://github.com/vrk-kpa/opendata-drupal/commit/53e179ffa6e8ce767887bad2efbe6648c68c865f))
+
+## [1.3.5](https://github.com/vrk-kpa/opendata-drupal/compare/v1.3.4...v1.3.5) (2022-01-25)
+
+
+### Bug Fixes
+
+* **AV-1612:** remove old avoindata-ckeditor-plugins src files ([353c425](https://github.com/vrk-kpa/opendata-drupal/commit/353c425323ba64ca7c89f8dd90a5a5dbcd35ceb8))
+* **AV-1612:** setup drupal modules dir to be a shared volume (docker or EFS) ([6538fef](https://github.com/vrk-kpa/opendata-drupal/commit/6538fef24449a588cf3c88cf5cdb979f7542ed0e))
+
 ## [1.3.4](https://github.com/vrk-kpa/opendata-drupal/compare/v1.3.3...v1.3.4) (2022-01-21)
 
 
