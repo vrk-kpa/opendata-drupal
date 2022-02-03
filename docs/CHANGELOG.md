@@ -1,3 +1,11 @@
+## [1.4.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.4.1...v1.4.2) (2022-02-03)
+
+
+### Bug Fixes
+
+* **AV-1576:** Port removed breadcrumbs from ansible ([44c3e62](https://github.com/vrk-kpa/opendata-drupal/commit/44c3e6294b7db72851436eae6d7168207246a414))
+* Port features from ansible ([f9cb140](https://github.com/vrk-kpa/opendata-drupal/commit/f9cb1402c011bdf8c27c484b16221b6eb197ec6d))
+
 ## [1.4.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.4.0...v1.4.1) (2022-01-27)
 
 
