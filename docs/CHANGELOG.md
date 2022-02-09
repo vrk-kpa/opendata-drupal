@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.6.1...v1.6.2) (2022-02-09)
+
+
+### Bug Fixes
+
+* **AV-1577:** Fix bundling of libraries and their dependencies ([bc43e40](https://github.com/vrk-kpa/opendata-drupal/commit/bc43e4096527264f9ae67ad15fe8ecffcd0a546a))
+
 ## [1.6.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.6.0...v1.6.1) (2022-02-09)
 
 
