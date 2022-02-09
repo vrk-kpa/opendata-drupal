@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.5.0...v1.6.0) (2022-02-09)
+
+
+### Features
+
+* **AV-1577:** Update assets for sticky navigation ([2587856](https://github.com/vrk-kpa/opendata-drupal/commit/258785608f65eb9c5213c3f08ff4ac75139a8322))
+
 # [1.5.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.4.4...v1.5.0) (2022-02-09)
 
 
