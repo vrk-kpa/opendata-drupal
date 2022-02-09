@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.4.4...v1.5.0) (2022-02-09)
+
+
+### Features
+
+* **AV-1578:** Cycle guide menu items ([51d4b15](https://github.com/vrk-kpa/opendata-drupal/commit/51d4b1512ca6d5055811561c7391a4462fa971c0))
+
 ## [1.4.4](https://github.com/vrk-kpa/opendata-drupal/compare/v1.4.3...v1.4.4) (2022-02-03)
 
 
