@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.6.0...v1.6.1) (2022-02-09)
+
+
+### Bug Fixes
+
+* **AV-1577:** Check existance of itemname to remove javascript error ([6bf9c35](https://github.com/vrk-kpa/opendata-drupal/commit/6bf9c35f4b8b5bb6ef1171ce2b1b30d7f4bc1bee))
+
 # [1.6.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.5.0...v1.6.0) (2022-02-09)
 
 
