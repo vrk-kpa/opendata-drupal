@@ -82,7 +82,9 @@ class CycleGuideMenuItem {
         for (const tag of aTags) {
             let path = tag.getAttribute('href');
             let itemName = tag.getElementsByClassName('link-content');
-            paths.push(new MenuItem(path, itemName[0].innerText));
+            if (itemName.length > 0) {
+                paths.push(new MenuItem(path, itemName[0].innerText));
+            }
         }
 
         return paths
