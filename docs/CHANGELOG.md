@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.7.0...v1.7.1) (2022-02-14)
+
+
+### Bug Fixes
+
+* **AV-1643:** Theme is dependant on module configurations ([202daed](https://github.com/vrk-kpa/opendata-drupal/commit/202daed87444d63831cfb44f76ec6422d53b0ae7))
+
 # [1.7.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.6.2...v1.7.0) (2022-02-14)
 
 
