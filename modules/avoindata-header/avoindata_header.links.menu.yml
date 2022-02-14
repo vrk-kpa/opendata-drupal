@@ -43,7 +43,7 @@ avoindata_header.guide_fi:
   description: 'Opas'
   parent: main-fi
   menu_name: main-fi
-  url: 'internal:/fi/opas'
+  url: 'internal:/fi/kayttoohjeet'
   weight: 6
 
 avoindata_header.moreoptions_fi:
@@ -100,7 +100,7 @@ avoindata_header.guide_en:
   description: 'Guide'
   parent: main-en
   menu_name: main-en
-  url: 'internal:/en/guide'
+  url: 'internal:/en/user-guide'
   weight: 6
 
 avoindata_header.moreoptions_en:
@@ -157,7 +157,7 @@ avoindata_header.guide_sv:
   description: 'Guide'
   parent: main-sv
   menu_name: main-sv
-  url: 'internal:/sv/guide'
+  url: 'internal:/sv/bruksanvisningar'
   weight: 6
 
 avoindata_header.moreoptions_sv:
