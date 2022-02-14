@@ -1,3 +1,31 @@
+## [1.6.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.6.1...v1.6.2) (2022-02-09)
+
+
+### Bug Fixes
+
+* **AV-1577:** Fix bundling of libraries and their dependencies ([bc43e40](https://github.com/vrk-kpa/opendata-drupal/commit/bc43e4096527264f9ae67ad15fe8ecffcd0a546a))
+
+## [1.6.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.6.0...v1.6.1) (2022-02-09)
+
+
+### Bug Fixes
+
+* **AV-1577:** Check existance of itemname to remove javascript error ([6bf9c35](https://github.com/vrk-kpa/opendata-drupal/commit/6bf9c35f4b8b5bb6ef1171ce2b1b30d7f4bc1bee))
+
+# [1.6.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.5.0...v1.6.0) (2022-02-09)
+
+
+### Features
+
+* **AV-1577:** Update assets for sticky navigation ([2587856](https://github.com/vrk-kpa/opendata-drupal/commit/258785608f65eb9c5213c3f08ff4ac75139a8322))
+
+# [1.5.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.4.4...v1.5.0) (2022-02-09)
+
+
+### Features
+
+* **AV-1578:** Cycle guide menu items ([51d4b15](https://github.com/vrk-kpa/opendata-drupal/commit/51d4b1512ca6d5055811561c7391a4462fa971c0))
+
 ## [1.4.4](https://github.com/vrk-kpa/opendata-drupal/compare/v1.4.3...v1.4.4) (2022-02-03)
 
 

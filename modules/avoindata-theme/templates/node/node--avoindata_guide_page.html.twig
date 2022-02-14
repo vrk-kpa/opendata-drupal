@@ -6,6 +6,7 @@
  * @ingroup themeable
  */
 #}
+{{ attach_library('avoindata/cycle-guide-menu-items') }}
 <div id="guide-page" class="container-fluid">
     <div class="avoindata-guide-container avoindata-card-container">
         <div class="row">
@@ -27,6 +28,10 @@
                 <div class="row">
                     {{ content.field_guide_comments|field_value }}
                 </div>
+            </div>
+            <div class="secondary col-12 col-md-8">
+                <button style="float: left;" id="previous-page-btn" class="suomi-button suomi-button-secondary">{% trans %}Previous{% endtrans %}</button>
+                <button style="float: right;" id="next-page-btn" class="suomi-button suomi-button-secondary">{% trans %}Next{% endtrans %}</button>
             </div>
         </div>
     </div>

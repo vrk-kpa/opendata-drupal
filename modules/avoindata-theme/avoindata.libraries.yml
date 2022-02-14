@@ -28,3 +28,7 @@ webfonts:
   css:
     base:
       '/resources/styles/fonts.css': {preprocess: false}
+
+cycle-guide-menu-items:
+  js:
+    'js/cycle_guide_menu_items.js': {}
