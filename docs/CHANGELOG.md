@@ -1,3 +1,16 @@
+# [1.7.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.6.2...v1.7.0) (2022-02-14)
+
+
+### Bug Fixes
+
+* **AV-1643:** Move menu template to common file ([aa6b8e4](https://github.com/vrk-kpa/opendata-drupal/commit/aa6b8e4de258e7df234e45a926fb201bd7eecfa9))
+* **AV-1643:** Update main nav links to new guide page URLs ([72913c3](https://github.com/vrk-kpa/opendata-drupal/commit/72913c37cb737ab0566ca37c5f2a7c2dff5c76e4))
+
+
+### Features
+
+* **AV-1643:** New guide menu structure ([ac8d61a](https://github.com/vrk-kpa/opendata-drupal/commit/ac8d61ad5604fb321d967db0ed9edf1e95457878))
+
 ## [1.6.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.6.1...v1.6.2) (2022-02-09)
 
 
