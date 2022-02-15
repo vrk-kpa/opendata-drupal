@@ -1,3 +1,15 @@
+## [1.7.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.7.1...v1.7.2) (2022-02-15)
+
+
+### Bug Fixes
+
+* **AV-1580:** Assets commit update ([8beae86](https://github.com/vrk-kpa/opendata-drupal/commit/8beae862b83da5ff19ac351997b5adc7e1bb77c8))
+* **AV-1580:** Final touch for guide menu ([f25c096](https://github.com/vrk-kpa/opendata-drupal/commit/f25c096c66241771d8cd48be6b06019e0beb23c5))
+* **AV-1580:** Still adjust spacing between guide menu items ([04d165a](https://github.com/vrk-kpa/opendata-drupal/commit/04d165acaea014062576064a06730466654b4493))
+* **AV-1643:** Move menu configurations to theme ([5a3fa76](https://github.com/vrk-kpa/opendata-drupal/commit/5a3fa7691cc3e29d86f77d1f896fda3f72d28ff3))
+* Revert "AV-1643: Move guide block configurations to guide module" ([a035af7](https://github.com/vrk-kpa/opendata-drupal/commit/a035af799c7b703acc018a84bdebd55b0062a4fe))
+* Revert "fix(AV-1643): Theme is dependant on module configurations" ([4eac825](https://github.com/vrk-kpa/opendata-drupal/commit/4eac82558049112320f5e86f7d19c39b3025d9e9))
+
 ## [1.7.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.7.0...v1.7.1) (2022-02-14)
 
 
