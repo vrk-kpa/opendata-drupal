@@ -114,6 +114,10 @@ drush config:delete editor.editor.full_html                             || true
 drush config:delete block.block.avoindata_collapsiblesearch             || true
 drush config:delete block.block.avoindata_infobox                       || true
 
+# enable custom theme + reload themes
+drush theme:enable -y avoindata
+drush config:set -y system.theme default avoindata
+drush config:import -y --partial --source ${THEME_DIR}/avoindata/config/install
 
 # reload custom modules
 # NOTE: ansible role skips errors with this condition:
@@ -132,11 +136,6 @@ drush config:import -y --partial --source ${MOD_DIR}/avoindata-events/config/ins
 drush config:import -y --partial --source ${MOD_DIR}/avoindata-guide/config/install            || true
 drush config:import -y --partial --source ${MOD_DIR}/avoindata-user/config/install             || true
 drush config:import -y --partial --source ${MOD_DIR}/avoindata-ckeditor-plugins/config/install || true
-
-# enable custom theme + reload themes
-drush theme:enable -y avoindata
-drush config:set -y system.theme default avoindata
-drush config:import -y --partial --source ${THEME_DIR}/avoindata/config/install
 
 # apply jinja2 templates
 jinja2 --format=yaml ${TEMPLATE_DIR}/site_config/disqus.settings.yml.j2    -o ${APP_DIR}/site_config/disqus.settings.yml
