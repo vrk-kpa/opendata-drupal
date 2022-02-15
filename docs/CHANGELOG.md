@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/vrk-kpa/opendata-drupal/compare/v1.7.2...v1.7.3) (2022-02-15)
+
+
+### Bug Fixes
+
+* Modify main navigation texts and expand the guides ([7488eab](https://github.com/vrk-kpa/opendata-drupal/commit/7488eab33197cbe081ee8af382db29c16a341700))
+
 ## [1.7.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.7.1...v1.7.2) (2022-02-15)
 
 
