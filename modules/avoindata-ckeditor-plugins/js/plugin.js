@@ -30,7 +30,7 @@
               '<h2 class="avoindata-expander-title">Title</h2>' +
               '<span class="icon-wrapper pull-right"><i class="fas fa-angle-down"></i></span>' +
             '</div>' +
-            '<div class="avoindata-expander-content collapse">Content</div>' +
+            '<div class="avoindata-expander-content">Content</div>' +
           '</div>',
 
         editables: {
