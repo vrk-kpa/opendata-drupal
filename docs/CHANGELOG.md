@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.7.3...v1.8.0) (2022-02-17)
+
+
+### Features
+
+* Add imce and update dependencies ([#28](https://github.com/vrk-kpa/opendata-drupal/issues/28)) ([e41c9ca](https://github.com/vrk-kpa/opendata-drupal/commit/e41c9ca803060dec81cc6be8bb385e5dc5c6a43e))
+
 ## [1.7.3](https://github.com/vrk-kpa/opendata-drupal/compare/v1.7.2...v1.7.3) (2022-02-15)
 
 
