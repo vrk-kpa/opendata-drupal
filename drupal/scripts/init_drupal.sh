@@ -83,6 +83,7 @@ drush theme:enable -y bootstrap
 [[ "$MODULE_INFO" != *"menu_item_role_access"* ]]         && drush pm:enable -y menu_item_role_access
 [[ "$MODULE_INFO" != *"matomo"* ]]                        && drush pm:enable -y matomo
 [[ "$MODULE_INFO" != *"upgrade_status"* ]]                && drush pm:enable -y upgrade_status
+[[ "$MODULE_INFO" != *"imce"* ]]                && drush pm:enable -y imce
 
 # enable custom modules
 [[ "$MODULE_INFO" != *"avoindata_header"* ]]            && drush pm:enable -y avoindata_header
