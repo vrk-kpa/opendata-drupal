@@ -18,6 +18,23 @@ function avoindata_preprocess_region(array &$variables) {
   $variables['language'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
 }
 
+function avoindata_preprocess_block(&$variables) {
+  $variables['link_map'] = [
+    'aboutopendatamenuen' => '/en/about-open-data',
+    'aboutopendatamenufi' => '/fi/tietoa-avoimesta-datasta',
+    'aboutopendatamenusv' => '/sv/api-principer',
+    'apiprinciplesmenuen' => '/en/api-principles',
+    'apiprinciplesmenufi' => '/fi/rajapintaperiaatteet',
+    'apiprinciplesmenusv' => '/sv/api-principer',
+    'guidemenuen' => '/en/user-guide',
+    'guidemenufi' => '/fi/kayttoohjeet',
+    'guidemenusv' => '/sv/bruksanvisningar',
+    'operatingmodelmenuen' => '/en/operating-model',
+    'operatingmodelmenufi' => '/fi/toimintamalli',
+    'operatingmodelmenusv' => '/sv/handlingsmodellen',
+  ];
+}
+
 /**
  * Implements hook_views_pre_render().
  */
