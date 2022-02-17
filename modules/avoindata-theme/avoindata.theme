@@ -22,7 +22,7 @@ function avoindata_preprocess_block(&$variables) {
   $variables['link_map'] = [
     'aboutopendatamenuen' => '/en/about-open-data',
     'aboutopendatamenufi' => '/fi/tietoa-avoimesta-datasta',
-    'aboutopendatamenusv' => '/sv/api-principer',
+    'aboutopendatamenusv' => '/sv/information-om-oppna-data',
     'apiprinciplesmenuen' => '/en/api-principles',
     'apiprinciplesmenufi' => '/fi/rajapintaperiaatteet',
     'apiprinciplesmenusv' => '/sv/api-principer',
