@@ -1,3 +1,12 @@
+## [1.8.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.1...v1.8.2) (2022-02-18)
+
+
+### Bug Fixes
+
+* **AV-1618:** Fix linter error ([56183cd](https://github.com/vrk-kpa/opendata-drupal/commit/56183cd01528ec099816155845ce78885bf4519c))
+* **AV-1618:** Minor fix on styles and linter fix ([544147e](https://github.com/vrk-kpa/opendata-drupal/commit/544147efc2f8375d0d59a95ec664580d6f433185))
+* **AV-1618:** Remove animations from expander. Also fix some spacings in guide menu ([c46d8a8](https://github.com/vrk-kpa/opendata-drupal/commit/c46d8a8ff2af87dd9ad69e74a559977b0e7c208b))
+
 ## [1.8.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.0...v1.8.1) (2022-02-17)
 
 
