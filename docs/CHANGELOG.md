@@ -1,3 +1,25 @@
+## [1.8.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.0...v1.8.1) (2022-02-17)
+
+
+### Bug Fixes
+
+* **AV-1642:** Add link support for guide menu headers ([96b6788](https://github.com/vrk-kpa/opendata-drupal/commit/96b6788dc23b3c086c405f6857180c2955021561))
+* **AV-1642:** Fix copy-paste error in guide-urls ([f5caabd](https://github.com/vrk-kpa/opendata-drupal/commit/f5caabd9f2fd27985339ceea0c1c84a6dc655df3))
+
+# [1.8.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.7.3...v1.8.0) (2022-02-17)
+
+
+### Features
+
+* Add imce and update dependencies ([#28](https://github.com/vrk-kpa/opendata-drupal/issues/28)) ([e41c9ca](https://github.com/vrk-kpa/opendata-drupal/commit/e41c9ca803060dec81cc6be8bb385e5dc5c6a43e))
+
+## [1.7.3](https://github.com/vrk-kpa/opendata-drupal/compare/v1.7.2...v1.7.3) (2022-02-15)
+
+
+### Bug Fixes
+
+* Modify main navigation texts and expand the guides ([7488eab](https://github.com/vrk-kpa/opendata-drupal/commit/7488eab33197cbe081ee8af382db29c16a341700))
+
 ## [1.7.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.7.1...v1.7.2) (2022-02-15)
 
 

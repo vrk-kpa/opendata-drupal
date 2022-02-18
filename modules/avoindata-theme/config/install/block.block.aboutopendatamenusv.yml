@@ -42,4 +42,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/api-principer\r\n/api-principer/*"
+    pages: "/information-om-oppna-data\r\n/information-om-oppna-data/*"
