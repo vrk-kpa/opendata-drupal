@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.2...v1.8.3) (2022-02-18)
+
+
+### Bug Fixes
+
+* Add permissions for imce ([f57d1d4](https://github.com/vrk-kpa/opendata-drupal/commit/f57d1d4e140abe3a703d68091e8bec45fc4a7751))
+
 ## [1.8.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.1...v1.8.2) (2022-02-18)
 
 
