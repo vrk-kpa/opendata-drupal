@@ -1,3 +1,73 @@
+## [1.8.3](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.2...v1.8.3) (2022-02-18)
+
+
+### Bug Fixes
+
+* Add permissions for imce ([f57d1d4](https://github.com/vrk-kpa/opendata-drupal/commit/f57d1d4e140abe3a703d68091e8bec45fc4a7751))
+
+## [1.8.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.1...v1.8.2) (2022-02-18)
+
+
+### Bug Fixes
+
+* **AV-1618:** Fix linter error ([56183cd](https://github.com/vrk-kpa/opendata-drupal/commit/56183cd01528ec099816155845ce78885bf4519c))
+* **AV-1618:** Minor fix on styles and linter fix ([544147e](https://github.com/vrk-kpa/opendata-drupal/commit/544147efc2f8375d0d59a95ec664580d6f433185))
+* **AV-1618:** Remove animations from expander. Also fix some spacings in guide menu ([c46d8a8](https://github.com/vrk-kpa/opendata-drupal/commit/c46d8a8ff2af87dd9ad69e74a559977b0e7c208b))
+
+## [1.8.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.0...v1.8.1) (2022-02-17)
+
+
+### Bug Fixes
+
+* **AV-1642:** Add link support for guide menu headers ([96b6788](https://github.com/vrk-kpa/opendata-drupal/commit/96b6788dc23b3c086c405f6857180c2955021561))
+* **AV-1642:** Fix copy-paste error in guide-urls ([f5caabd](https://github.com/vrk-kpa/opendata-drupal/commit/f5caabd9f2fd27985339ceea0c1c84a6dc655df3))
+
+# [1.8.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.7.3...v1.8.0) (2022-02-17)
+
+
+### Features
+
+* Add imce and update dependencies ([#28](https://github.com/vrk-kpa/opendata-drupal/issues/28)) ([e41c9ca](https://github.com/vrk-kpa/opendata-drupal/commit/e41c9ca803060dec81cc6be8bb385e5dc5c6a43e))
+
+## [1.7.3](https://github.com/vrk-kpa/opendata-drupal/compare/v1.7.2...v1.7.3) (2022-02-15)
+
+
+### Bug Fixes
+
+* Modify main navigation texts and expand the guides ([7488eab](https://github.com/vrk-kpa/opendata-drupal/commit/7488eab33197cbe081ee8af382db29c16a341700))
+
+## [1.7.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.7.1...v1.7.2) (2022-02-15)
+
+
+### Bug Fixes
+
+* **AV-1580:** Assets commit update ([8beae86](https://github.com/vrk-kpa/opendata-drupal/commit/8beae862b83da5ff19ac351997b5adc7e1bb77c8))
+* **AV-1580:** Final touch for guide menu ([f25c096](https://github.com/vrk-kpa/opendata-drupal/commit/f25c096c66241771d8cd48be6b06019e0beb23c5))
+* **AV-1580:** Still adjust spacing between guide menu items ([04d165a](https://github.com/vrk-kpa/opendata-drupal/commit/04d165acaea014062576064a06730466654b4493))
+* **AV-1643:** Move menu configurations to theme ([5a3fa76](https://github.com/vrk-kpa/opendata-drupal/commit/5a3fa7691cc3e29d86f77d1f896fda3f72d28ff3))
+* Revert "AV-1643: Move guide block configurations to guide module" ([a035af7](https://github.com/vrk-kpa/opendata-drupal/commit/a035af799c7b703acc018a84bdebd55b0062a4fe))
+* Revert "fix(AV-1643): Theme is dependant on module configurations" ([4eac825](https://github.com/vrk-kpa/opendata-drupal/commit/4eac82558049112320f5e86f7d19c39b3025d9e9))
+
+## [1.7.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.7.0...v1.7.1) (2022-02-14)
+
+
+### Bug Fixes
+
+* **AV-1643:** Theme is dependant on module configurations ([202daed](https://github.com/vrk-kpa/opendata-drupal/commit/202daed87444d63831cfb44f76ec6422d53b0ae7))
+
+# [1.7.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.6.2...v1.7.0) (2022-02-14)
+
+
+### Bug Fixes
+
+* **AV-1643:** Move menu template to common file ([aa6b8e4](https://github.com/vrk-kpa/opendata-drupal/commit/aa6b8e4de258e7df234e45a926fb201bd7eecfa9))
+* **AV-1643:** Update main nav links to new guide page URLs ([72913c3](https://github.com/vrk-kpa/opendata-drupal/commit/72913c37cb737ab0566ca37c5f2a7c2dff5c76e4))
+
+
+### Features
+
+* **AV-1643:** New guide menu structure ([ac8d61a](https://github.com/vrk-kpa/opendata-drupal/commit/ac8d61ad5604fb321d967db0ed9edf1e95457878))
+
 ## [1.6.2](https://github.com/vrk-kpa/opendata-drupal/compare/v1.6.1...v1.6.2) (2022-02-09)
 
 

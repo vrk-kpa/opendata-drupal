@@ -38,6 +38,7 @@ settings:
             - DrupalImage
             - Table
             - HorizontalRule
+            - ImceLink
         -
           name: 'Block Formatting'
           items:
