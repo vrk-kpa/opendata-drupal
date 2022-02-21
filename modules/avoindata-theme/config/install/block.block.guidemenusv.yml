@@ -17,7 +17,7 @@ provider: null
 plugin: 'system_menu_block:guide-menu-sv'
 settings:
   id: 'system_menu_block:guide-menu-sv'
-  label: 'Guide på svenska'
+  label: 'Bruksanvisningar'
   label_display: visible
   provider: system
   level: 1

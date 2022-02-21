@@ -17,7 +17,7 @@ provider: null
 plugin: 'system_menu_block:about-open-data-menu-en'
 settings:
   id: 'system_menu_block:about-open-data-menu-en'
-  label: 'About open data menu (en)'
+  label: 'About open data'
   label_display: visible
   provider: system
   level: 1
