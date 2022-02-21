@@ -1,3 +1,10 @@
+## [1.8.4](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.3...v1.8.4) (2022-02-21)
+
+
+### Bug Fixes
+
+* **AV-1642:** Update menu labels on config file ([22bac4f](https://github.com/vrk-kpa/opendata-drupal/commit/22bac4f94d5cdc2095b49d3a6a0d18f0fc817f6a))
+
 ## [1.8.3](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.2...v1.8.3) (2022-02-18)
 
 
