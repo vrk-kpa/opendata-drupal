@@ -17,7 +17,7 @@ provider: null
 plugin: 'system_menu_block:operating-model-menu-fi'
 settings:
   id: 'system_menu_block:operating-model-menu-fi'
-  label: 'Operating model menu (fi)'
+  label: 'Tiedon jakamisen toimintamalli'
   label_display: visible
   provider: system
   level: 1

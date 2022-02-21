@@ -17,7 +17,7 @@ provider: null
 plugin: 'system_menu_block:api-principles-menu-fi'
 settings:
   id: 'system_menu_block:api-principles-menu-fi'
-  label: 'API principles menu (fi)'
+  label: 'Rajapintaperiaatteet'
   label_display: visible
   provider: system
   level: 1

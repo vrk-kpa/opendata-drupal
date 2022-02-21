@@ -17,7 +17,7 @@ provider: null
 plugin: 'system_menu_block:guide-menu-fi'
 settings:
   id: 'system_menu_block:guide-menu-fi'
-  label: Käyttöopas
+  label: Käyttöohjeet
   label_display: visible
   provider: system
   level: 1

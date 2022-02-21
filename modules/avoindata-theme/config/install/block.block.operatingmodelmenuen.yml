@@ -17,7 +17,7 @@ provider: null
 plugin: 'system_menu_block:operating-model-menu-en'
 settings:
   id: 'system_menu_block:operating-model-menu-en'
-  label: 'Operating model menu (en)'
+  label: 'Operating model for sharing data'
   label_display: visible
   provider: system
   level: 1
