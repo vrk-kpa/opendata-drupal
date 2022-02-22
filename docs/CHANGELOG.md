@@ -1,3 +1,11 @@
+## [1.8.5](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.4...v1.8.5) (2022-02-22)
+
+
+### Bug Fixes
+
+* **AV-1648:** Make guide menu scrollable if content doesn't fit on screen ([d891ab6](https://github.com/vrk-kpa/opendata-drupal/commit/d891ab62872d1f68d1f8ff9ced622a2f42015898))
+* **AV-1648:** Update assets commit ([5875f48](https://github.com/vrk-kpa/opendata-drupal/commit/5875f483c6c53de37fbc4cee2f5f89d28cc25028))
+
 ## [1.8.4](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.3...v1.8.4) (2022-02-21)
 
 
