@@ -17,7 +17,7 @@ provider: null
 plugin: 'system_menu_block:api-principles-menu-en'
 settings:
   id: 'system_menu_block:api-principles-menu-en'
-  label: 'API principles menu (en)'
+  label: 'Principles'
   label_display: visible
   provider: system
   level: 1
