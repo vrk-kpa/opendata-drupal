@@ -1,3 +1,10 @@
+## [1.8.12](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.11...v1.8.12) (2022-02-25)
+
+
+### Bug Fixes
+
+* Update assets ([7b83c00](https://github.com/vrk-kpa/opendata-drupal/commit/7b83c009314f93dabe9d85b19bcb5be40f49df62))
+
 ## [1.8.11](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.10...v1.8.11) (2022-02-25)
 
 
