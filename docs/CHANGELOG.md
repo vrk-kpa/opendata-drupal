@@ -1,3 +1,10 @@
+## [1.8.11](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.10...v1.8.11) (2022-02-25)
+
+
+### Bug Fixes
+
+* **AV-1578:** Fixes for guide menu previous and next buttons ([31e3589](https://github.com/vrk-kpa/opendata-drupal/commit/31e35890bc82656582619904933f8858c0189f4e))
+
 ## [1.8.10](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.9...v1.8.10) (2022-02-25)
 
 
