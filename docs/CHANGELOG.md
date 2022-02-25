@@ -1,3 +1,11 @@
+## [1.8.7](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.6...v1.8.7) (2022-02-25)
+
+
+### Bug Fixes
+
+* **AV-1649:** Disable guide menu counter numbers for most of menus ([d914346](https://github.com/vrk-kpa/opendata-drupal/commit/d91434648461397fa346c2fe887418c88ac0fe3a))
+* **AV-1649:** Update assets ([7829323](https://github.com/vrk-kpa/opendata-drupal/commit/782932309995b00b94d3152817ded74243182e57))
+
 ## [1.8.6](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.5...v1.8.6) (2022-02-25)
 
 
