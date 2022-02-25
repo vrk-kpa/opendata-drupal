@@ -33,6 +33,21 @@ function avoindata_preprocess_block(&$variables) {
     'operatingmodelmenufi' => '/fi/toimintamalli',
     'operatingmodelmenusv' => '/sv/handlingsmodellen',
   ];
+
+  $variables['menucounters'] = [
+    'aboutopendatamenuen' => false,
+    'aboutopendatamenufi' => false,
+    'aboutopendatamenusv' => false,
+    'apiprinciplesmenuen' => false,
+    'apiprinciplesmenufi' => false,
+    'apiprinciplesmenusv' => false,
+    'guidemenuen' => false,
+    'guidemenufi' => false,
+    'guidemenusv' => false,
+    'operatingmodelmenuen' => true,
+    'operatingmodelmenufi' => true,
+    'operatingmodelmenusv' => true,
+  ];
 }
 
 /**

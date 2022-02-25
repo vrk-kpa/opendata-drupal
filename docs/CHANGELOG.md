@@ -1,3 +1,10 @@
+## [1.8.6](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.5...v1.8.6) (2022-02-25)
+
+
+### Bug Fixes
+
+* **AV-1530:** Implement new design on error pages. Also remove need for deprecated inline-css plugin from gulpfile ([d05339e](https://github.com/vrk-kpa/opendata-drupal/commit/d05339e5e06e8a28c3a2ca7061de59a548d44895))
+
 ## [1.8.5](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.4...v1.8.5) (2022-02-22)
 
 
