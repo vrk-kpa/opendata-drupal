@@ -1,3 +1,10 @@
+## [1.8.10](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.9...v1.8.10) (2022-02-25)
+
+
+### Bug Fixes
+
+* Expanders should be editable ([907a6ac](https://github.com/vrk-kpa/opendata-drupal/commit/907a6ac2c579bb89e27bba9c34a4815a4770ea14))
+
 ## [1.8.9](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.8...v1.8.9) (2022-02-25)
 
 
