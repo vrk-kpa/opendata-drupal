@@ -1,3 +1,10 @@
+## [1.8.8](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.7...v1.8.8) (2022-02-25)
+
+
+### Bug Fixes
+
+* **AV-1651:** Allow expander toggler to recognize multiple group of expanders on page ([6eb88f7](https://github.com/vrk-kpa/opendata-drupal/commit/6eb88f7d7b7314dbc9e643dde87952df99f5e9ce))
+
 ## [1.8.7](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.6...v1.8.7) (2022-02-25)
 
 
