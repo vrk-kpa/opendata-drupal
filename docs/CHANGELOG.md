@@ -1,3 +1,10 @@
+## [1.8.9](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.8...v1.8.9) (2022-02-25)
+
+
+### Bug Fixes
+
+* **AV-1576:** Update paths for guide pages in breadcrumb config ([05c3fbc](https://github.com/vrk-kpa/opendata-drupal/commit/05c3fbc533fd16a3805f8176e5bf78a7e7da791c))
+
 ## [1.8.8](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.7...v1.8.8) (2022-02-25)
 
 
