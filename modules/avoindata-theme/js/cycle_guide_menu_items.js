@@ -67,35 +67,36 @@ class MenuUtils {
             paths.push(headerLink);
         }
 
-        const menuItems = this.menu.getElementsByClassName(this.navItemLinkSelector);
-        for (let item of menuItems) {
-            const subnavElement = this.isSubnavElement(item);
-            const path = item.getAttribute('href');
-            const itemName = item.getElementsByClassName(this.navItemLinkContentSelector);
-            const next = null;
-            const prev = null;
+        if (this.menu) {
+            const menuItems = this.menu.getElementsByClassName(this.navItemLinkSelector);
+            for (let item of menuItems) {
+                const subnavElement = this.isSubnavElement(item);
+                const path = item.getAttribute('href');
+                const itemName = item.getElementsByClassName(this.navItemLinkContentSelector);
+                const next = null;
+                const prev = null;
 
-            if (itemName.length > 0) {
-                paths.push(new MenuItem(path, itemName[0].innerText, subnavElement, next, prev));
+                if (itemName.length > 0) {
+                    paths.push(new MenuItem(path, itemName[0].innerText, subnavElement, next, prev));
+                }
+            }
+
+            // Set the next and prev pointers so that they're always pointing at the next or previous main items in the list.
+            for (let i = 0; i < paths.length; i++) {
+                if (i === 0) {
+                    paths[i].next = this.getNextMainElementIndex(i, paths);
+                }
+
+                if (i === paths.length - 1) {
+                    paths[i].prev = this.getPreviousMainElementIndex(i, paths);
+                }
+
+                if (i > 0 && i < paths.length) {
+                    paths[i].prev = this.getPreviousMainElementIndex(i, paths);
+                    paths[i].next = this.getNextMainElementIndex(i, paths);
+                }
             }
         }
-
-        // Set the next and prev pointers so that they're always pointing at the next or previous main items in the list.
-        for (let i = 0; i < paths.length; i++) {
-            if (i === 0) {
-                paths[i].next = this.getNextMainElementIndex(i, paths);
-            }
-
-            if (i === paths.length - 1) {
-                paths[i].prev = this.getPreviousMainElementIndex(i, paths);
-            }
-
-            if (i > 0 && i < paths.length) {
-                paths[i].prev = this.getPreviousMainElementIndex(i, paths);
-                paths[i].next = this.getNextMainElementIndex(i, paths);
-            }
-        }
-
         return paths;
     }
 
