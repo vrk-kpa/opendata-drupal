@@ -18,13 +18,31 @@ class MenuUtils {
         this.menuHeadingIds = [
             'block-guidemenuen-menu',
             'block-guidemenufi-menu',
-            'block-guidemenusv-menu'
+            'block-guidemenusv-menu',
+            'block-aboutopendatamenuen-menu',
+            'block-aboutopendatamenufi-menu',
+            'block-aboutopendatamenusv-menu',
+            'block-apiprinciplesmenuen-menu',
+            'block-apiprinciplesmenufi-menu',
+            'block-apiprinciplesmenusv-menu',
+            'block-operatingmodelmenuen-menu',
+            'block-operatingmodelmenufi-menu',
+            'block-operatingmodelmenusv-menu'
         ]
 
         this.menuLinkSelectors = [
             'block-guidemenuen',
             'block-guidemenufi',
-            'block-guidemenusv'
+            'block-guidemenusv',
+            'block-aboutopendatamenuen',
+            'block-aboutopendatamenufi',
+            'block-aboutopendatamenusv',
+            'block-apiprinciplesmenuen',
+            'block-apiprinciplesmenufi',
+            'block-apiprinciplesmenusv',
+            'block-operatingmodelmenuen',
+            'block-operatingmodelmenufi',
+            'block-operatingmodelmenusv'
         ]
 
         this.menu = this.getMenu();
