@@ -1,3 +1,11 @@
+## [1.8.13](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.12...v1.8.13) (2022-02-28)
+
+
+### Bug Fixes
+
+* Add rest of the menu ids to selectors ([a2ef6a0](https://github.com/vrk-kpa/opendata-drupal/commit/a2ef6a02f4f7d57852ed9e757aa60d38e5c9a366))
+* prevent an error if menu has not been configured ([4afcd1e](https://github.com/vrk-kpa/opendata-drupal/commit/4afcd1eec5fcb57d8607ad0c8ee38fd8f7f58261))
+
 ## [1.8.12](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.11...v1.8.12) (2022-02-25)
 
 
