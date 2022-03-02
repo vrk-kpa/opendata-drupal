@@ -13,7 +13,7 @@ jobs:
       group: ${{ github.ref }}/code-sniffer
       cancel-in-progress: true
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Install PHP 7.4
         uses: "shivammathur/setup-php@v2"
