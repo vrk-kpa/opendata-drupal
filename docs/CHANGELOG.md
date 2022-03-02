@@ -1,3 +1,12 @@
+## [1.8.14](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.13...v1.8.14) (2022-03-02)
+
+
+### Bug Fixes
+
+* **AV-1650:** Hide menu cycler from guide page when menu is not visible. Also slightly increase width of guide content column by reducing padding on larger screens ([82502a8](https://github.com/vrk-kpa/opendata-drupal/commit/82502a89ff89104364c202583e2e0c59e8acc3af))
+* **AV-1650:** Make guide content wider when menu isn't presented on page ([bc5fc10](https://github.com/vrk-kpa/opendata-drupal/commit/bc5fc1010f02b9635eb4a86fb3155c625bbe2937))
+* **AV-1650:** Submodule update ([4a53955](https://github.com/vrk-kpa/opendata-drupal/commit/4a5395576dcf94bbbd6cf521e30bc8ef4a369cb4))
+
 ## [1.8.13](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.12...v1.8.13) (2022-02-28)
 
 
