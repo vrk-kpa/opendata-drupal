@@ -4,6 +4,7 @@
  */
 
 (function () {
+  const textAriaLabelExternalSite = Drupal.t("Leads to external site");
 
   // Register the plugin within the editor.
   CKEDITOR.plugins.add('avoindata_ckeditor_buttons', {
@@ -162,6 +163,7 @@
 
           el.addClass("external");
           el.append(svg);
+          el.setAttribute('aria-label', textAriaLabelExternalSite);
         }
 
       });
