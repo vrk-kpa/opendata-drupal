@@ -84,7 +84,7 @@ drush theme:enable -y bootstrap
 [[ "$MODULE_INFO" != *"matomo"* ]]                        && drush pm:enable -y matomo
 [[ "$MODULE_INFO" != *"upgrade_status"* ]]                && drush pm:enable -y upgrade_status
 [[ "$MODULE_INFO" != *"imce"* ]]                          && drush pm:enable -y imce
-[[ "$MODULE_INFO" != *"transliterate_filenames"* ]]                          && drush pm:enable -y transliterate_filenames
+[[ "$MODULE_INFO" != *"transliterate_filenames"* ]]       && drush pm:enable -y transliterate_filenames
 
 # enable custom modules
 [[ "$MODULE_INFO" != *"avoindata_header"* ]]            && drush pm:enable -y avoindata_header
