@@ -1,3 +1,11 @@
+## [1.8.15](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.14...v1.8.15) (2022-03-04)
+
+
+### Bug Fixes
+
+* **AV-1529:** Assets styling ([55c57c5](https://github.com/vrk-kpa/opendata-drupal/commit/55c57c5d907a08d3af34b3e1760d6d76a8fb9c9c))
+* **AV-1529:** Update search box input with new style class ([b74eb59](https://github.com/vrk-kpa/opendata-drupal/commit/b74eb599377c2008fb6586708b35a94c031844f8))
+
 ## [1.8.14](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.13...v1.8.14) (2022-03-02)
 
 
