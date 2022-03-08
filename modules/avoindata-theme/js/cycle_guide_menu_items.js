@@ -149,14 +149,28 @@ class MenuUtils {
     }
 }
 
-class CycleMenuItemsView {
+class GuidePageView {
     constructor(menuUtils) {
         this.currentPath = window.location.pathname;
         this.nextBtn = document.getElementById('next-page-btn');
         this.prevBtn = document.getElementById('previous-page-btn');
         this.paths = menuUtils.getMenuPaths();
+        this.arrowBoxTitleSelector = document.getElementById('arrow-box-title');
 
         this.setAnchorLinks();
+        this.setArrowBoxTitle();
+    }
+
+    setArrowBoxTitle() {
+        if (this.paths.length <= 0) {
+            return;
+        }
+
+        // First item in the list should be the header which will be displayed in the Arrowbox.
+        let headerPathName = this.paths[0].itemName;
+        if (headerPathName) {
+            this.arrowBoxTitleSelector.innerText = headerPathName;
+        }
     }
 
     setAnchorLinks() {
@@ -202,5 +216,5 @@ class CycleMenuItemsView {
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    new CycleMenuItemsView(new MenuUtils());
+    new GuidePageView(new MenuUtils());
 });

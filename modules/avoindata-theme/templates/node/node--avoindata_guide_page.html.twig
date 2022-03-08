@@ -7,6 +7,9 @@
  */
 #}
 {{ attach_library('avoindata/cycle-guide-menu-items') }}
+<div class="arrow-box">
+    <h1 id="arrow-box-title">{% trans %}Guides{% endtrans %}</h1>
+</div>
 <div id="guide-page" class="container-fluid">
     <div class="avoindata-guide-container avoindata-card-container">
         {% set has_menu = (drupal_region('guide_menu')|render|trim) is not empty %}
