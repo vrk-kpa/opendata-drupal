@@ -132,3 +132,16 @@ function avoindata_preprocess_menu(&$variables, $hook){
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_node()
+ */
+function avoindata_preprocess_node(&$variables){
+  $dateFormats = [
+    'fi' => 'j.n.Y',
+    'sv' => 'j.n.Y',
+    'en' => 'n/j/Y',
+  ];
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['date_format'] = $dateFormats[$language];
+}

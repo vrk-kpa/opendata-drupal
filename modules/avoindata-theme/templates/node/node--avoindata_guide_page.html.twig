@@ -36,10 +36,14 @@
                 </div>
                 {% if has_menu %}
                     <div class="guide-cycle-btn-container">
-                        <a href="" style="float: left;" id="previous-page-btn"></a>
-                        <a href="" style="float: right;" id="next-page-btn"></a>
+                        <a href="" id="previous-page-btn"></a>
+                        <a href="" id="next-page-btn"></a>
                     </div>
                 {% endif %}
+
+                <div class="mt-4">
+                    <span class="post-date"><b>{{ 'Updated date' | t }}</b>: {{ node.changed.value | date(date_format) }}</span>
+                </div>
             </div>
         </div>
     </div>
