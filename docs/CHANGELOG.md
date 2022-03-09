@@ -1,3 +1,20 @@
+# [1.9.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.18...v1.9.0) (2022-03-09)
+
+
+### Features
+
+* **AV-1583:** CSS styling for arrowbox ([6a3659c](https://github.com/vrk-kpa/opendata-drupal/commit/6a3659c4dafe1fedbb156afd32d728b3eadfae40))
+* **AV-1583:** Implement arrowbox on guide pages ([3a98331](https://github.com/vrk-kpa/opendata-drupal/commit/3a9833129c6db38768f89d6a8450c6427ec346a5))
+
+## [1.8.18](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.17...v1.8.18) (2022-03-09)
+
+
+### Bug Fixes
+
+* **AV-1641:** Add aria-label about leading to external page when marking link as an external in ckeditor ([5bb4db7](https://github.com/vrk-kpa/opendata-drupal/commit/5bb4db75c578cf2bfeb1db0c1a6d1d5b59b0fdd9))
+* **AV-1656:** Added posts updated date on bottom of guide page ([630533e](https://github.com/vrk-kpa/opendata-drupal/commit/630533e920ad320f769bea8f158234f3a111d930))
+* **AV-1657:** Allow menu cycle links to span only 50% of container width ([a1d26d3](https://github.com/vrk-kpa/opendata-drupal/commit/a1d26d3272e35e2d66db6534b76fb39767b3bbc4))
+
 ## [1.8.17](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.16...v1.8.17) (2022-03-09)
 
 
