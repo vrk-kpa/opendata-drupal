@@ -7,33 +7,46 @@
  */
 #}
 {{ attach_library('avoindata/cycle-guide-menu-items') }}
+<div class="arrow-box">
+    <h1 id="arrow-box-title">{% trans %}Guides{% endtrans %}</h1>
+</div>
 <div id="guide-page" class="container-fluid">
     <div class="avoindata-guide-container avoindata-card-container">
+        {% set has_menu = (drupal_region('guide_menu')|render|trim) is not empty %}
         <div class="row guide-header-container">
-        <div class="col-12 col-md-8 col-md-push-4">
-            <h2 id="guide-header">
-                {{ label }}
-            </h2>
-        </div>
+            <div class="col-xs-12 {{ has_menu ? 'col-md-8 col-md-push-4 col--guide-right' : ''}}">
+                <h1 id="guide-header">
+                    {{ label }}
+                </h1>
+            </div>
         </div>
         <div class="row">
-            <div id="guide-menu-column" class="secondary col-12 col-md-4">
-                {{ drupal_region('guide_menu') }}
-            </div>
-            <div class="secondary col-12 col-md-8">
-                <div class="row guide-image">
+            {% if has_menu %}
+                <div id="guide-menu-column" class="secondary col-xs-12 col-md-4 col--guide-left">
+                    {{ drupal_region('guide_menu') }}
+                </div>
+            {% endif %}
+
+            <div class="secondary col-xs-12 {{ has_menu ? 'col-md-8 col--guide-right' : ''}}">
+                <div class="guide-image">
                     {{ content.field_page_image|field_value }}
                 </div>
-                <div class="row guide-content">
+                <div class="guide-content">
                     {{ content.field_content|field_value }}
                 </div>
-                <div class="row">
+                <div>
                     {{ content.field_guide_comments|field_value }}
                 </div>
-            </div>
-            <div class="secondary col-12 col-md-8">
-                <button style="float: left;" id="previous-page-btn" class="suomi-button suomi-button-secondary">{% trans %}Previous{% endtrans %}</button>
-                <button style="float: right;" id="next-page-btn" class="suomi-button suomi-button-secondary">{% trans %}Next{% endtrans %}</button>
+                {% if has_menu %}
+                    <div class="guide-cycle-btn-container">
+                        <a href="" id="previous-page-btn"></a>
+                        <a href="" id="next-page-btn"></a>
+                    </div>
+                {% endif %}
+
+                <div class="mt-4">
+                    <span class="post-date"><b>{{ 'Updated date' | t }}</b>: {{ node.changed.value | date(date_format) }}</span>
+                </div>
             </div>
         </div>
     </div>

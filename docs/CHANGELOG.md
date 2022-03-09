@@ -1,3 +1,110 @@
+# [1.9.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.18...v1.9.0) (2022-03-09)
+
+
+### Features
+
+* **AV-1583:** CSS styling for arrowbox ([6a3659c](https://github.com/vrk-kpa/opendata-drupal/commit/6a3659c4dafe1fedbb156afd32d728b3eadfae40))
+* **AV-1583:** Implement arrowbox on guide pages ([3a98331](https://github.com/vrk-kpa/opendata-drupal/commit/3a9833129c6db38768f89d6a8450c6427ec346a5))
+
+## [1.8.18](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.17...v1.8.18) (2022-03-09)
+
+
+### Bug Fixes
+
+* **AV-1641:** Add aria-label about leading to external page when marking link as an external in ckeditor ([5bb4db7](https://github.com/vrk-kpa/opendata-drupal/commit/5bb4db75c578cf2bfeb1db0c1a6d1d5b59b0fdd9))
+* **AV-1656:** Added posts updated date on bottom of guide page ([630533e](https://github.com/vrk-kpa/opendata-drupal/commit/630533e920ad320f769bea8f158234f3a111d930))
+* **AV-1657:** Allow menu cycle links to span only 50% of container width ([a1d26d3](https://github.com/vrk-kpa/opendata-drupal/commit/a1d26d3272e35e2d66db6534b76fb39767b3bbc4))
+
+## [1.8.17](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.16...v1.8.17) (2022-03-09)
+
+
+### Bug Fixes
+
+* **AV-1652:** Enable ImceImage for ckeditor to allow svg:s in content ([cdda5ab](https://github.com/vrk-kpa/opendata-drupal/commit/cdda5ab7e3bf4976f551ff738f713599877ab842))
+* **AV-1655:** Add module transliterate_filenames to make files working even they have special characters in filename ([cb6d99a](https://github.com/vrk-kpa/opendata-drupal/commit/cb6d99a151a27453831ffd82d90f0b9f38d40c2b))
+
+## [1.8.16](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.15...v1.8.16) (2022-03-09)
+
+
+### Bug Fixes
+
+* **AV-1617:** Corrections on title levels in some elements and pages ([0d196af](https://github.com/vrk-kpa/opendata-drupal/commit/0d196af753aa052cdb8a8f015e832a3bb7e3d1cb))
+
+## [1.8.15](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.14...v1.8.15) (2022-03-04)
+
+
+### Bug Fixes
+
+* **AV-1529:** Assets styling ([55c57c5](https://github.com/vrk-kpa/opendata-drupal/commit/55c57c5d907a08d3af34b3e1760d6d76a8fb9c9c))
+* **AV-1529:** Update search box input with new style class ([b74eb59](https://github.com/vrk-kpa/opendata-drupal/commit/b74eb599377c2008fb6586708b35a94c031844f8))
+
+## [1.8.14](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.13...v1.8.14) (2022-03-02)
+
+
+### Bug Fixes
+
+* **AV-1650:** Hide menu cycler from guide page when menu is not visible. Also slightly increase width of guide content column by reducing padding on larger screens ([82502a8](https://github.com/vrk-kpa/opendata-drupal/commit/82502a89ff89104364c202583e2e0c59e8acc3af))
+* **AV-1650:** Make guide content wider when menu isn't presented on page ([bc5fc10](https://github.com/vrk-kpa/opendata-drupal/commit/bc5fc1010f02b9635eb4a86fb3155c625bbe2937))
+* **AV-1650:** Submodule update ([4a53955](https://github.com/vrk-kpa/opendata-drupal/commit/4a5395576dcf94bbbd6cf521e30bc8ef4a369cb4))
+
+## [1.8.13](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.12...v1.8.13) (2022-02-28)
+
+
+### Bug Fixes
+
+* Add rest of the menu ids to selectors ([a2ef6a0](https://github.com/vrk-kpa/opendata-drupal/commit/a2ef6a02f4f7d57852ed9e757aa60d38e5c9a366))
+* prevent an error if menu has not been configured ([4afcd1e](https://github.com/vrk-kpa/opendata-drupal/commit/4afcd1eec5fcb57d8607ad0c8ee38fd8f7f58261))
+
+## [1.8.12](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.11...v1.8.12) (2022-02-25)
+
+
+### Bug Fixes
+
+* Update assets ([7b83c00](https://github.com/vrk-kpa/opendata-drupal/commit/7b83c009314f93dabe9d85b19bcb5be40f49df62))
+
+## [1.8.11](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.10...v1.8.11) (2022-02-25)
+
+
+### Bug Fixes
+
+* **AV-1578:** Fixes for guide menu previous and next buttons ([31e3589](https://github.com/vrk-kpa/opendata-drupal/commit/31e35890bc82656582619904933f8858c0189f4e))
+
+## [1.8.10](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.9...v1.8.10) (2022-02-25)
+
+
+### Bug Fixes
+
+* Expanders should be editable ([907a6ac](https://github.com/vrk-kpa/opendata-drupal/commit/907a6ac2c579bb89e27bba9c34a4815a4770ea14))
+
+## [1.8.9](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.8...v1.8.9) (2022-02-25)
+
+
+### Bug Fixes
+
+* **AV-1576:** Update paths for guide pages in breadcrumb config ([05c3fbc](https://github.com/vrk-kpa/opendata-drupal/commit/05c3fbc533fd16a3805f8176e5bf78a7e7da791c))
+
+## [1.8.8](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.7...v1.8.8) (2022-02-25)
+
+
+### Bug Fixes
+
+* **AV-1651:** Allow expander toggler to recognize multiple group of expanders on page ([6eb88f7](https://github.com/vrk-kpa/opendata-drupal/commit/6eb88f7d7b7314dbc9e643dde87952df99f5e9ce))
+
+## [1.8.7](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.6...v1.8.7) (2022-02-25)
+
+
+### Bug Fixes
+
+* **AV-1649:** Disable guide menu counter numbers for most of menus ([d914346](https://github.com/vrk-kpa/opendata-drupal/commit/d91434648461397fa346c2fe887418c88ac0fe3a))
+* **AV-1649:** Update assets ([7829323](https://github.com/vrk-kpa/opendata-drupal/commit/782932309995b00b94d3152817ded74243182e57))
+
+## [1.8.6](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.5...v1.8.6) (2022-02-25)
+
+
+### Bug Fixes
+
+* **AV-1530:** Implement new design on error pages. Also remove need for deprecated inline-css plugin from gulpfile ([d05339e](https://github.com/vrk-kpa/opendata-drupal/commit/d05339e5e06e8a28c3a2ca7061de59a548d44895))
+
 ## [1.8.5](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.4...v1.8.5) (2022-02-22)
 
 

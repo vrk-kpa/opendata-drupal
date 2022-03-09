@@ -20,5 +20,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /guide
+    pages: "/toimintamalli\r\n/toimintamalli/*\r\n/operating-model\r\n/operating-model/*\r\n/handlingsmodellen\r\n/handlingsmodellen/*\r\n/tietoa-avoimesta-datasta\r\n/tietoa-avoimesta-datasta/*\r\n/about-open-data\r\n/about-open-data/*\r\n/information-om-oppna-data\r\n/information-om-oppna-data/*\r\n/kayttoohjeet\r\n/kayttoohjeet/*\r\n/user-guide\r\n/user-guide/*\r\n/bruksanvisningar\r\n/bruksanvisningar/*\r\n/rajapintaperiaatteet\r\n/rajapintaperiaatteet/*\r\n/api-principles\r\n/api-principles/*\r\n/api-principer\r\n/api-principer/*"
     negate: true

@@ -7,7 +7,6 @@ var sourcemaps = require("gulp-sourcemaps");
 var prefixer = require("gulp-autoprefixer");
 var del = require("del");
 var template = require("gulp-template");
-var inlineCss = require("gulp-inline-css");
 var cleancss = require("gulp-clean-css");
 var terser = require("gulp-terser");
 var base64 = require("gulp-base64-inline");
@@ -183,8 +182,8 @@ gulp.task("static_css",
   pump([
     gulp.src(paths.src.static_pages + "/css/main.css"),
     base64('../../resources/images'),
-    concat("style.css"),
-    gulp.dest(paths.src.static_pages + "/css")
+    concat("error.css"),
+    gulp.dest(paths.dist + "/styles")
   ], done)
 }));
 
@@ -193,7 +192,6 @@ gulp.task(
   gulp.series("static_css", (done) => {
     pump([
       gulp.src(paths.src.static_pages + "/*.html"),
-      inlineCss(),
       gulp.dest(paths.dist + "/static")
     ], done)
   })

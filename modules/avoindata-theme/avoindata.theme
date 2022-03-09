@@ -33,6 +33,21 @@ function avoindata_preprocess_block(&$variables) {
     'operatingmodelmenufi' => '/fi/toimintamalli',
     'operatingmodelmenusv' => '/sv/handlingsmodellen',
   ];
+
+  $variables['menucounters'] = [
+    'aboutopendatamenuen' => false,
+    'aboutopendatamenufi' => false,
+    'aboutopendatamenusv' => false,
+    'apiprinciplesmenuen' => false,
+    'apiprinciplesmenufi' => false,
+    'apiprinciplesmenusv' => false,
+    'guidemenuen' => false,
+    'guidemenufi' => false,
+    'guidemenusv' => false,
+    'operatingmodelmenuen' => true,
+    'operatingmodelmenufi' => true,
+    'operatingmodelmenusv' => true,
+  ];
 }
 
 /**
@@ -116,4 +131,17 @@ function avoindata_preprocess_menu(&$variables, $hook){
       $variables['items'][$key]['is_active'] = $navUrlInPath;
     }
   }
+}
+
+/**
+ * Implements hook_preprocess_node()
+ */
+function avoindata_preprocess_node(&$variables){
+  $dateFormats = [
+    'fi' => 'j.n.Y',
+    'sv' => 'j.n.Y',
+    'en' => 'n/j/Y',
+  ];
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['date_format'] = $dateFormats[$language];
 }

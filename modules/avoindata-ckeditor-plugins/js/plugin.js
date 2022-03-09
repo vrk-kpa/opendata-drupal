@@ -4,6 +4,7 @@
  */
 
 (function () {
+  const textAriaLabelExternalSite = Drupal.t("Leads to external site");
 
   // Register the plugin within the editor.
   CKEDITOR.plugins.add('avoindata_ckeditor_buttons', {
@@ -27,7 +28,7 @@
         template:
           '<div class="avoindata-expander">' +
             '<div class="avoindata-expander-header">' +
-              '<h2 class="avoindata-expander-title">Title</h2>' +
+              '<h3 class="avoindata-expander-title">Title</h3>' +
               '<span class="icon-wrapper pull-right"><i class="fas fa-angle-down"></i></span>' +
             '</div><div class="avoindata-expander-content">Content</div></div>',
 
@@ -40,7 +41,7 @@
           }
         },
 
-        requiredContent: 'div(avoindata-expander) h2(avoindata-expander-title) div(avoindata-expander-content)',
+        requiredContent: 'div(avoindata-expander) h3(avoindata-expander-title) div(avoindata-expander-content)',
 
         upcast: function (element) {
             return element.name == 'div' && element.hasClass('avoindata-expander');
@@ -60,7 +61,7 @@
         template:
           '<div class="avoindata-note"><div class="avoindata-note-header">' +
           '<img class="avoindata-note-header-image" src="/resources/images/avoindata-note-icon.svg"/>' +
-          '<h2 class="avoindata-note-title">Title</h2></div>' +
+          '<div class="avoindata-note-title">Title</div></div>' +
           '<div class="avoindata-note-content">Content</div></div>',
 
         editables: {
@@ -72,7 +73,7 @@
           }
         },
 
-        requiredContent: 'div(avoindata-note) h2(avoindata-note-title) div(avoindata-note-content)',
+        requiredContent: 'div(avoindata-note) div(avoindata-note-title) div(avoindata-note-content)',
 
         upcast: function (element) {
           return element.name == 'div' && element.hasClass('avoindata-note');
@@ -119,7 +120,7 @@
       editor.widgets.add('avoindata_example', {
         template:
           '<div class="avoindata-example"><div class="avoindata-example-header">' +
-          '<h2 class="avoindata-example-title">Title</h2></div>' +
+          '<div class="avoindata-example-title">Title</div></div>' +
           '<div class="avoindata-example-content">Content</div></div>',
 
         editables: {
@@ -131,7 +132,7 @@
           }
         },
 
-        requiredContent: 'div(avoindata-example) h2(avoindata-example-title) div(avoindata-example-content)',
+        requiredContent: 'div(avoindata-example) div(avoindata-example-title) div(avoindata-example-content)',
 
         upcast: function (element) {
           return element.name == 'div' && element.hasClass('avoindata-example');
@@ -162,6 +163,7 @@
 
           el.addClass("external");
           el.append(svg);
+          el.setAttribute('aria-label', textAriaLabelExternalSite);
         }
 
       });
@@ -186,7 +188,7 @@
         dialog: 'avoindata_section',
         template:
         '<div class="avoindata-section">' +
-        '<h3 class="avoindata-section__title">Title</h3>' +
+        '<h2 class="avoindata-section__title">Title</h2>' +
         '<div class="avoindata-section__content">Content</div></div>',
         editables: {
           title: {
@@ -196,7 +198,7 @@
             selector: '.avoindata-section__content'
           }
         },
-        requiredContent: 'div(avoindata-section) h3(avoindata-section__title) div(avoindata-section__content)',
+        requiredContent: 'div(avoindata-section) h2(avoindata-section__title) div(avoindata-section__content)',
         upcast: function (element) {
           return element.name == 'div' && element.hasClass('avoindata-section');
         },
