@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.9.1...v2.0.0) (2022-03-09)
+
+
+### Features
+
+* Merge pull request [#52](https://github.com/vrk-kpa/opendata-drupal/issues/52) from vrk-kpa/ckan-2.9 ([999cefa](https://github.com/vrk-kpa/opendata-drupal/commit/999cefa971a90673e6994a7b9487ef301df5397d))
+
+
+### BREAKING CHANGES
+
+* CKAN 2.9 related changes
+
 ## [1.9.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.9.0...v1.9.1) (2022-03-09)
 
 
