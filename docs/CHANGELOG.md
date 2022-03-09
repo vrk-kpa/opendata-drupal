@@ -1,3 +1,11 @@
+## [1.8.17](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.16...v1.8.17) (2022-03-09)
+
+
+### Bug Fixes
+
+* **AV-1652:** Enable ImceImage for ckeditor to allow svg:s in content ([cdda5ab](https://github.com/vrk-kpa/opendata-drupal/commit/cdda5ab7e3bf4976f551ff738f713599877ab842))
+* **AV-1655:** Add module transliterate_filenames to make files working even they have special characters in filename ([cb6d99a](https://github.com/vrk-kpa/opendata-drupal/commit/cb6d99a151a27453831ffd82d90f0b9f38d40c2b))
+
 ## [1.8.16](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.15...v1.8.16) (2022-03-09)
 
 
