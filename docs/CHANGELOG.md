@@ -1,3 +1,11 @@
+# [1.9.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.18...v1.9.0) (2022-03-09)
+
+
+### Features
+
+* **AV-1583:** CSS styling for arrowbox ([6a3659c](https://github.com/vrk-kpa/opendata-drupal/commit/6a3659c4dafe1fedbb156afd32d728b3eadfae40))
+* **AV-1583:** Implement arrowbox on guide pages ([3a98331](https://github.com/vrk-kpa/opendata-drupal/commit/3a9833129c6db38768f89d6a8450c6427ec346a5))
+
 ## [1.8.18](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.17...v1.8.18) (2022-03-09)
 
 
