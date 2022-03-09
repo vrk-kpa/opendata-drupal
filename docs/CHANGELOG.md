@@ -1,3 +1,11 @@
+## [1.9.1](https://github.com/vrk-kpa/opendata-drupal/compare/v1.9.0...v1.9.1) (2022-03-09)
+
+
+### Bug Fixes
+
+* **AV-1617:** Title element changed to correct in basic page ([3f832fa](https://github.com/vrk-kpa/opendata-drupal/commit/3f832fa4b53765937b665f0d25ebbc23c2102444))
+* **AV-1617:** Update assets ([3a75aa1](https://github.com/vrk-kpa/opendata-drupal/commit/3a75aa1b4bec8d1b581e0506f5044d0d68d5d8ff))
+
 # [1.9.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.18...v1.9.0) (2022-03-09)
 
 
