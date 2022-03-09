@@ -1,3 +1,10 @@
+## [1.8.16](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.15...v1.8.16) (2022-03-09)
+
+
+### Bug Fixes
+
+* **AV-1617:** Corrections on title levels in some elements and pages ([0d196af](https://github.com/vrk-kpa/opendata-drupal/commit/0d196af753aa052cdb8a8f015e832a3bb7e3d1cb))
+
 ## [1.8.15](https://github.com/vrk-kpa/opendata-drupal/compare/v1.8.14...v1.8.15) (2022-03-04)
 
 
