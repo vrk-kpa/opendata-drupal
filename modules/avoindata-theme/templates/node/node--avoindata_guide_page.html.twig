@@ -12,9 +12,9 @@
         {% set has_menu = (drupal_region('guide_menu')|render|trim) is not empty %}
         <div class="row guide-header-container">
             <div class="col-xs-12 {{ has_menu ? 'col-md-8 col-md-push-4 col--guide-right' : ''}}">
-                <h2 id="guide-header">
+                <h1 id="guide-header">
                     {{ label }}
-                </h2>
+                </h1>
             </div>
         </div>
         <div class="row">
