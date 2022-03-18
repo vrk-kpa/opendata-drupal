@@ -156,6 +156,7 @@ class GuidePageView {
         this.prevBtn = document.getElementById('previous-page-btn');
         this.paths = menuUtils.getMenuPaths();
         this.arrowBoxTitleSelector = document.getElementById('arrow-box-title');
+        this.arrowBoxSelector = document.getElementById('js-arrow-box');
 
         this.setAnchorLinks();
         this.setArrowBoxTitle();
@@ -166,6 +167,8 @@ class GuidePageView {
             return;
         }
 
+        this.arrowBoxSelector.style.display = 'block';
+
         // First item in the list should be the header which will be displayed in the Arrowbox.
         let headerPathName = this.paths[0].itemName;
         if (headerPathName) {
@@ -174,6 +177,10 @@ class GuidePageView {
     }
 
     setAnchorLinks() {
+        if (this.paths.length <= 0) {
+            return;
+        }
+
         const currentPageIndex = this.getIndexOfCurrentPage();
 
         this.setNextAnchorLink(currentPageIndex);
