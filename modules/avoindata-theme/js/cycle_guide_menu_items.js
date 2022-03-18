@@ -190,8 +190,7 @@ class GuidePageView {
     setNextAnchorLink(currentPageIndex) {
         const currentElement = this.paths[currentPageIndex];
         if (currentElement.next === undefined) {
-            this.nextBtn.innerHTML = '';
-            this.nextBtn.href = '';
+            this.nextBtn.style.display = 'none';
             return;
         }
 
@@ -205,8 +204,7 @@ class GuidePageView {
     setPrevAnchorLink(currentPageIndex) {
         const currentElement = this.paths[currentPageIndex];
         if (currentElement.prev === undefined) {
-            this.prevBtn.innerHTML = '';
-            this.prevBtn.href = '';
+            this.prevBtn.style.display = 'none';
             return;
         }
 
