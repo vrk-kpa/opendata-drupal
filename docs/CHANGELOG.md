@@ -1,3 +1,11 @@
+## [2.0.1](https://github.com/vrk-kpa/opendata-drupal/compare/v2.0.0...v2.0.1) (2022-03-18)
+
+
+### Bug Fixes
+
+* **AV-1664:** CSS styling ([cada101](https://github.com/vrk-kpa/opendata-drupal/commit/cada101b4fdaebae334b2c422047af5693fbb364))
+* **AV-1664:** Display hidden arrowbox ([0daf83b](https://github.com/vrk-kpa/opendata-drupal/commit/0daf83b0823d095cee71603378c0d1d7cb0d85f5))
+
 # [2.0.0](https://github.com/vrk-kpa/opendata-drupal/compare/v1.9.1...v2.0.0) (2022-03-09)
 
 
