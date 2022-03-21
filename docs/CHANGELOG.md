@@ -1,3 +1,11 @@
+## [2.0.2](https://github.com/vrk-kpa/opendata-drupal/compare/v2.0.1...v2.0.2) (2022-03-21)
+
+
+### Bug Fixes
+
+* **AV-1666:** CSS styling ([cca7089](https://github.com/vrk-kpa/opendata-drupal/commit/cca7089aca4e30a98c5b5a1f48b234f9dd0dbedd))
+* **AV-1666:** Fix guide page back and forward button ([6885299](https://github.com/vrk-kpa/opendata-drupal/commit/6885299a3bff87472493f82de04f0f99877c7f7d))
+
 ## [2.0.1](https://github.com/vrk-kpa/opendata-drupal/compare/v2.0.0...v2.0.1) (2022-03-18)
 
 
