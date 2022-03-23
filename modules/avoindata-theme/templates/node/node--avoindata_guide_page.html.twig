@@ -9,9 +9,12 @@
 {{ attach_library('avoindata/cycle-guide-menu-items') }}
 {% set has_menu = drupal_region('guide_menu')|render|striptags|trim %}
 
-<div class="arrow-box" id="js-arrow-box">
-    <h1 id="arrow-box-title"></h1>
-</div>
+
+{% if has_menu %}
+    <div class="arrow-box" id="js-arrow-box">
+        <h1 id="arrow-box-title"></h1>
+    </div>
+{% endif %}
 
 <div id="guide-page" class="container-fluid">
     <div class="avoindata-guide-container avoindata-card-container">
