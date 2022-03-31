@@ -7,12 +7,17 @@
  */
 #}
 {{ attach_library('avoindata/cycle-guide-menu-items') }}
-<div class="arrow-box" id="js-arrow-box">
-    <h1 id="arrow-box-title"></h1>
-</div>
+{% set has_menu = drupal_region('guide_menu')|render|striptags|trim %}
+
+
+{% if has_menu %}
+    <div class="arrow-box" id="js-arrow-box">
+        <h1 id="arrow-box-title"></h1>
+    </div>
+{% endif %}
+
 <div id="guide-page" class="container-fluid">
     <div class="avoindata-guide-container avoindata-card-container">
-        {% set has_menu = (drupal_region('guide_menu')|render|trim) is not empty %}
         <div class="row guide-header-container">
             <div class="col-xs-12 {{ has_menu ? 'col-md-8 col-md-push-4 col--guide-right' : ''}}">
                 <h1 id="guide-header">

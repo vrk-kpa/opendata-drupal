@@ -167,8 +167,6 @@ class GuidePageView {
             return;
         }
 
-        this.arrowBoxSelector.style.display = 'block';
-
         // First item in the list should be the header which will be displayed in the Arrowbox.
         let headerPathName = this.paths[0].itemName;
         if (headerPathName) {
