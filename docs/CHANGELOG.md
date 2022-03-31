@@ -1,3 +1,12 @@
+## [2.0.3](https://github.com/vrk-kpa/opendata-drupal/compare/v2.0.2...v2.0.3) (2022-03-31)
+
+
+### Bug Fixes
+
+* **AV-1650:** Modify has_menu variable ([8e9c0a2](https://github.com/vrk-kpa/opendata-drupal/commit/8e9c0a270c79676ded6fe0f2ef403900a8c407a3))
+* **AV-1650:** Remove arrowbox display attribute ([77f4c48](https://github.com/vrk-kpa/opendata-drupal/commit/77f4c485444f35c09d11d928f6ca5118bb95e588))
+* **AV-1650:** Use has_menu instead of JS for showing arrowbox ([9c3366a](https://github.com/vrk-kpa/opendata-drupal/commit/9c3366a36e348d8eea9a3e40e3fb109ef705f52b))
+
 ## [2.0.2](https://github.com/vrk-kpa/opendata-drupal/compare/v2.0.1...v2.0.2) (2022-03-21)
 
 
