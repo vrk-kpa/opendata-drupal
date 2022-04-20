@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/vrk-kpa/opendata-drupal/compare/v2.0.4...v2.0.5) (2022-04-20)
+
+
+### Bug Fixes
+
+* Update README.md copyright year to trigger rebuild ([3939446](https://github.com/vrk-kpa/opendata-drupal/commit/393944676be4af8a78c6ce7a0a73d941be51e5ee))
+
 ## [2.0.4](https://github.com/vrk-kpa/opendata-drupal/compare/v2.0.3...v2.0.4) (2022-04-20)
 
 
