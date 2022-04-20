@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/vrk-kpa/opendata-drupal/compare/v2.0.3...v2.0.4) (2022-04-20)
+
+
+### Bug Fixes
+
+* sync opendata-assets with opendata-ckan ([831212a](https://github.com/vrk-kpa/opendata-drupal/commit/831212a9bdfc2b370a89d8f9d241f2dc9dfe2b77))
+
 ## [2.0.3](https://github.com/vrk-kpa/opendata-drupal/compare/v2.0.2...v2.0.3) (2022-03-31)
 
 
