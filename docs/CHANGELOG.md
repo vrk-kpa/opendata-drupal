@@ -1,3 +1,11 @@
+# [2.1.0](https://github.com/vrk-kpa/opendata-drupal/compare/v2.0.5...v2.1.0) (2022-05-06)
+
+
+### Features
+
+* Update drupal assets ([e2d75c8](https://github.com/vrk-kpa/opendata-drupal/commit/e2d75c8d5a779290fd63e989e46033625d91937b))
+* Update drupal dependencies ([f5948ce](https://github.com/vrk-kpa/opendata-drupal/commit/f5948ceeb55a3e17bbf0d0e0d9f8693eea41c437))
+
 ## [2.0.5](https://github.com/vrk-kpa/opendata-drupal/compare/v2.0.4...v2.0.5) (2022-04-20)
 
 
