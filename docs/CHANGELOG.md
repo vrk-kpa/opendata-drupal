@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/vrk-kpa/opendata-drupal/compare/v2.1.0...v2.2.0) (2022-05-09)
+
+
+### Features
+
+* **AV-1704:** Update translations ([f70ef0a](https://github.com/vrk-kpa/opendata-drupal/commit/f70ef0ae57ee826846d1f3e785fd57a2368917ba))
+
 # [2.1.0](https://github.com/vrk-kpa/opendata-drupal/compare/v2.0.5...v2.1.0) (2022-05-06)
 
 
