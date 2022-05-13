@@ -5,7 +5,7 @@ ARG DYNATRACE_ENABLED=0
 #
 # Drupal build
 #
-FROM drupal:9.3.12-php7.4-apache-buster AS drupal_build
+FROM drupal:9.3.13-php7.4-apache-buster AS drupal_build
 
 # upgrade system + install required packages
 RUN apt-get update -yq && \
