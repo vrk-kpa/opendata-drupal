@@ -28,7 +28,7 @@
         template:
           '<div class="avoindata-expander">' +
             '<div class="avoindata-expander-header">' +
-              '<h3 class="avoindata-expander-title">Title</h3>' +
+              '<div class="avoindata-expander-title">Title</div>' +
               '<span class="icon-wrapper pull-right"><i class="fas fa-angle-down"></i></span>' +
             '</div><div class="avoindata-expander-content">Content</div></div>',
 
@@ -41,7 +41,7 @@
           }
         },
 
-        requiredContent: 'div(avoindata-expander) h3(avoindata-expander-title) div(avoindata-expander-content)',
+        requiredContent: 'div(avoindata-expander) div(avoindata-expander-title) div(avoindata-expander-content)',
 
         upcast: function (element) {
             return element.name == 'div' && element.hasClass('avoindata-expander');
@@ -188,7 +188,7 @@
         dialog: 'avoindata_section',
         template:
         '<div class="avoindata-section">' +
-        '<h2 class="avoindata-section__title">Title</h2>' +
+        '<h3 class="avoindata-section__title">Title</h3>' +
         '<div class="avoindata-section__content">Content</div></div>',
         editables: {
           title: {
@@ -198,7 +198,7 @@
             selector: '.avoindata-section__content'
           }
         },
-        requiredContent: 'div(avoindata-section) h2(avoindata-section__title) div(avoindata-section__content)',
+        requiredContent: 'div(avoindata-section) h3(avoindata-section__title) div(avoindata-section__content)',
         upcast: function (element) {
           return element.name == 'div' && element.hasClass('avoindata-section');
         },
