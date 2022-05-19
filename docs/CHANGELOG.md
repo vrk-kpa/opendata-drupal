@@ -1,3 +1,12 @@
+## [2.2.1](https://github.com/vrk-kpa/opendata-drupal/compare/v2.2.0...v2.2.1) (2022-05-19)
+
+
+### Bug Fixes
+
+* **AV-1617:** Fix header levels on guide page and ckeditor components. Also change h3 element to just a div in expander-component ([1d8ecb1](https://github.com/vrk-kpa/opendata-drupal/commit/1d8ecb1435c0c1396f83fbf48b4241dee10bc85e))
+* **AV-1649:** Remove counter menu number from last item in guide menu ([a494fd9](https://github.com/vrk-kpa/opendata-drupal/commit/a494fd9b75486f1f55077245d953d7617d437279))
+* **AV-1649:** Update assets commit ([cc8f6e6](https://github.com/vrk-kpa/opendata-drupal/commit/cc8f6e644ed6bf0760a39026d434e29f9e29246f))
+
 # [2.2.0](https://github.com/vrk-kpa/opendata-drupal/compare/v2.1.0...v2.2.0) (2022-05-09)
 
 
