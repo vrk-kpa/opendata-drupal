@@ -19,35 +19,80 @@ function avoindata_preprocess_region(array &$variables) {
 }
 
 function avoindata_preprocess_block(&$variables) {
-  $variables['link_map'] = [
-    'aboutopendatamenuen' => '/en/about-open-data',
-    'aboutopendatamenufi' => '/fi/tietoa-avoimesta-datasta',
-    'aboutopendatamenusv' => '/sv/information-om-oppna-data',
-    'apiprinciplesmenuen' => '/en/api-principles',
-    'apiprinciplesmenufi' => '/fi/rajapintaperiaatteet',
-    'apiprinciplesmenusv' => '/sv/api-principer',
-    'guidemenuen' => '/en/user-guide',
-    'guidemenufi' => '/fi/kayttoohjeet',
-    'guidemenusv' => '/sv/bruksanvisningar',
-    'operatingmodelmenuen' => '/en/operating-model',
-    'operatingmodelmenufi' => '/fi/toimintamalli',
-    'operatingmodelmenusv' => '/sv/handlingsmodellen',
+  $linkMap = [
+    'aboutopendatamenuen' => [
+      'href' => '/en/about-open-data',
+      'class' => '',
+      'menucounter' => false,
+      ],
+    'aboutopendatamenufi' => [
+      'href' => '/fi/tietoa-avoimesta-datasta',
+      'class' => '',
+      'menucounter' => false,
+      ],
+    'aboutopendatamenusv' => [
+      'href' => '/sv/information-om-oppna-data',
+      'class' => '',
+      'menucounter' => false,
+      ],
+    'apiprinciplesmenuen' => [
+      'href' => '/en/api-principles',
+      'class' => '',
+      'menucounter' => false,
+      ],
+    'apiprinciplesmenufi' => [
+      'href' => '/fi/rajapintaperiaatteet',
+      'class' => '',
+      'menucounter' => false,
+      ],
+    'apiprinciplesmenusv' => [
+      'href' => '/sv/api-principer',
+      'class' => '',
+      'menucounter' => false,
+      ],
+    'guidemenuen' => [
+      'href' => '/en/user-guide',
+      'class' => '',
+      'menucounter' => false,
+      ],
+    'guidemenufi' => [
+      'href' => '/fi/kayttoohjeet',
+      'class' => '',
+      'menucounter' => false,
+      ],
+    'guidemenusv' => [
+      'href' => '/sv/bruksanvisningar',
+      'class' => '',
+      'menucounter' => false,
+      ],
+    'operatingmodelmenuen' => [
+      'href' => '/en/operating-model',
+      'class' => '',
+      'menucounter' => true,
+      ],
+    'operatingmodelmenufi' => [
+      'href' => '/fi/toimintamalli',
+      'class' => '',
+      'menucounter' => true,
+      ],
+    'operatingmodelmenusv' => [
+      'href' => '/sv/handlingsmodellen',
+      'class' => '',
+      'menucounter' => true,
+      ],
   ];
 
-  $variables['menucounters'] = [
-    'aboutopendatamenuen' => false,
-    'aboutopendatamenufi' => false,
-    'aboutopendatamenusv' => false,
-    'apiprinciplesmenuen' => false,
-    'apiprinciplesmenufi' => false,
-    'apiprinciplesmenusv' => false,
-    'guidemenuen' => false,
-    'guidemenufi' => false,
-    'guidemenusv' => false,
-    'operatingmodelmenuen' => true,
-    'operatingmodelmenufi' => true,
-    'operatingmodelmenusv' => true,
-  ];
+  if (array_key_exists($variables['elements']['#id'], $linkMap)) {
+    $currentLanguage = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $currentPathAlias = \Drupal::service('path_alias.manager')->getAliasByPath(\Drupal::service('path.current')->getPath());
+    $activeUrl = '/' . $currentLanguage . $currentPathAlias;
+
+    if ($activeUrl === $linkMap[$variables['elements']['#id']]['href']) {
+      $linkMap[$variables['elements']['#id']]['class'] = 'active';
+    }
+  }
+
+  $variables['link_map'] = $linkMap;
 }
 
 /**

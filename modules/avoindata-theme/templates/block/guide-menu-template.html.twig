@@ -34,15 +34,15 @@
  */
 #}
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
-<nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby') }} class="{{ menucounters[elements['#id']] == true ? 'menu--counter' }}">
+<nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby') }} class="{{ link_map[elements['#id']]['menucounter'] == true ? 'menu--counter' }}">
     {# Label. If not displayed, we still provide it for screen readers. #}
-    {% if not configuration.label_display %}
+    {% if not configuration.label_display %}sdfsdf
         {% set title_attributes = title_attributes.addClass('visually-hidden') %}
     {% endif %}
     {{ title_prefix }}
     <div class="menu-header">
-        <h2 class="menu-heading" {{ title_attributes.setAttribute('id', heading_id) }}>
-            <a href="{{ link_map[elements['#id']] }}">{{ configuration.label }}</a>
+        <h2 class="menu-heading {{ link_map[elements['#id']]['class'] }}" {{ title_attributes.setAttribute('id', heading_id) }}>
+            <a href="{{ link_map[elements['#id']]['href'] }}">{{ configuration.label }}</a>
         </h2>
     </div>
     {{ title_suffix }}
