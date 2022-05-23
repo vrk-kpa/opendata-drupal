@@ -36,7 +36,7 @@
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 <nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby') }} class="{{ link_map[elements['#id']]['menucounter'] == true ? 'menu--counter' }}">
     {# Label. If not displayed, we still provide it for screen readers. #}
-    {% if not configuration.label_display %}sdfsdf
+    {% if not configuration.label_display %}
         {% set title_attributes = title_attributes.addClass('visually-hidden') %}
     {% endif %}
     {{ title_prefix }}
