@@ -1,3 +1,12 @@
+## [2.2.2](https://github.com/vrk-kpa/opendata-drupal/compare/v2.2.1...v2.2.2) (2022-05-25)
+
+
+### Bug Fixes
+
+* **AV-1667:** Add active-items stylings for guide menus main title when user is on landing page ([9b50238](https://github.com/vrk-kpa/opendata-drupal/commit/9b502385bcc16b37176d6f202aaab5d0086b0d87))
+* **AV-1667:** Remove accidentally added template text ([14f42ae](https://github.com/vrk-kpa/opendata-drupal/commit/14f42ae09e6269a6895de66cfef2f224a1fcc513))
+* **AV-1667:** Update assets commit ([f0fe189](https://github.com/vrk-kpa/opendata-drupal/commit/f0fe189c7681508a49253eef9aa2767c5408ec1d))
+
 ## [2.2.1](https://github.com/vrk-kpa/opendata-drupal/compare/v2.2.0...v2.2.1) (2022-05-19)
 
 
