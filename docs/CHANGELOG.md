@@ -1,3 +1,16 @@
+# [2.3.0](https://github.com/vrk-kpa/opendata-drupal/compare/v2.2.2...v2.3.0) (2022-06-10)
+
+
+### Bug Fixes
+
+* protected forms does not support regexes ([1a2bd72](https://github.com/vrk-kpa/opendata-drupal/commit/1a2bd72073b94fbe5fbb9f0491348906b30f0318))
+* Update drupal translations and migrate drupal translation project to new version ([fa96898](https://github.com/vrk-kpa/opendata-drupal/commit/fa968985c6d3c23ace6aaf4efe6b7ee58acc7305))
+
+
+### Features
+
+* Migrate protected_submissions to protected_forms and update dependecies ([3a885c3](https://github.com/vrk-kpa/opendata-drupal/commit/3a885c33c59fd151589d27beeb8ba45a959502b9))
+
 ## [2.2.2](https://github.com/vrk-kpa/opendata-drupal/compare/v2.2.1...v2.2.2) (2022-05-25)
 
 
