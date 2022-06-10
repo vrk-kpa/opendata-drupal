@@ -1,3 +1,12 @@
+## [2.3.1](https://github.com/vrk-kpa/opendata-drupal/compare/v2.3.0...v2.3.1) (2022-06-10)
+
+
+### Bug Fixes
+
+* **AV-1736:** Fix guide main titles font-family ([2720e88](https://github.com/vrk-kpa/opendata-drupal/commit/2720e881d53ad90b94bb39456b83d0bd8b17d4c5))
+* **AV-1736:** Update assets module ([eebcb44](https://github.com/vrk-kpa/opendata-drupal/commit/eebcb44708355c4e1e4f2258dd19e23b18266beb))
+* **AV-1736:** Update submodule commit ([7f29198](https://github.com/vrk-kpa/opendata-drupal/commit/7f29198927f6632ed1b99c5403dba1b195f81167))
+
 # [2.3.0](https://github.com/vrk-kpa/opendata-drupal/compare/v2.2.2...v2.3.0) (2022-06-10)
 
 
