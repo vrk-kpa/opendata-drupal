@@ -58,6 +58,7 @@ drush theme:enable -y bootstrap
 [[ "$MODULE_INFO" == *"search"* ]]      && drush pm:uninstall -y search
 [[ "$MODULE_INFO" == *"contextual"* ]]  && drush pm:uninstall -y contextual
 [[ "$MODULE_INFO" == *"page_cache"* ]]  && drush pm:uninstall -y page_cache
+[[ "$MODULE_INFO" == *"protected_submissions"* ]]  && drush pm:uninstall -y protected_submissions
 
 # enable modules
 [[ "$MODULE_INFO" != *"twig_tweak"* ]]                    && drush pm:enable -y twig_tweak
@@ -77,7 +78,7 @@ drush theme:enable -y bootstrap
 [[ "$MODULE_INFO" != *"ape"* ]]                           && drush pm:enable -y ape
 [[ "$MODULE_INFO" != *"honeypot"* ]]                      && drush pm:enable -y honeypot
 [[ "$MODULE_INFO" != *"domain_registration"* ]]           && drush pm:enable -y domain_registration
-[[ "$MODULE_INFO" != *"protected_submissions"* ]]         && drush pm:enable -y protected_submissions
+[[ "$MODULE_INFO" != *"protected_forms"* ]]         && drush pm:enable -y protected_forms
 [[ "$MODULE_INFO" != *"recaptcha"* ]]                     && drush pm:enable -y recaptcha
 [[ "$MODULE_INFO" != *"unpublished_node_permissions"* ]]  && drush pm:enable -y unpublished_node_permissions
 [[ "$MODULE_INFO" != *"menu_item_role_access"* ]]         && drush pm:enable -y menu_item_role_access
