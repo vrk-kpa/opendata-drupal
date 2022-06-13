@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/vrk-kpa/opendata-drupal/compare/v2.3.1...v2.3.2) (2022-06-13)
+
+
+### Bug Fixes
+
+* Security update on drupal ([eaf2935](https://github.com/vrk-kpa/opendata-drupal/commit/eaf2935842a1681f7114449363b2666c40d0830c))
+
 ## [2.3.1](https://github.com/vrk-kpa/opendata-drupal/compare/v2.3.0...v2.3.1) (2022-06-10)
 
 
