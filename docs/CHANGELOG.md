@@ -1,3 +1,12 @@
+## [2.3.3](https://github.com/vrk-kpa/opendata-drupal/compare/v2.3.2...v2.3.3) (2022-06-30)
+
+
+### Bug Fixes
+
+* **AV-1753:** Added info text for contact-pages template. ([ad6a8a3](https://github.com/vrk-kpa/opendata-drupal/commit/ad6a8a394422f0d370890bf1e9881c1f58139533))
+* **AV-1753:** Rename less-variable ([49d98ac](https://github.com/vrk-kpa/opendata-drupal/commit/49d98ac67985a32085d63e75b7409596f8c51288))
+* **AV-1753:** Update assets module ([5391eb7](https://github.com/vrk-kpa/opendata-drupal/commit/5391eb7f9c6a2b8922d440c202387ef1236c84b6))
+
 ## [2.3.2](https://github.com/vrk-kpa/opendata-drupal/compare/v2.3.1...v2.3.2) (2022-06-13)
 
 
