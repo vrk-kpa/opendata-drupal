@@ -1,3 +1,11 @@
+## [2.3.4](https://github.com/vrk-kpa/opendata-drupal/compare/v2.3.3...v2.3.4) (2022-07-25)
+
+
+### Bug Fixes
+
+* Add www to rejected patterns ([788c5fd](https://github.com/vrk-kpa/opendata-drupal/commit/788c5fdba26b4297597f22b91674cb93516d99ba))
+* Update rejected message ([4defb00](https://github.com/vrk-kpa/opendata-drupal/commit/4defb008b93a0fc6a95468ebb6d6f8b67c26aca2))
+
 ## [2.3.3](https://github.com/vrk-kpa/opendata-drupal/compare/v2.3.2...v2.3.3) (2022-06-30)
 
 
