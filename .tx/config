@@ -2,8 +2,8 @@
 host = https://www.transifex.com
 
 [o:avoindata:p:ytp:r:drupal8]
-file_filter = drupal/i18n/<lang>/drupal8.po
-source_file = drupal/i18n/drupal8.po
+file_filter = drupal/i18n/<lang>/drupal.po
+source_file = drupal/i18n/drupal.pot
 source_lang = en
 type        = PO
 
